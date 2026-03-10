@@ -6,7 +6,7 @@ public class TrackAnim : MonoBehaviour
 {
 
     public Material trackMat;
-    public float speed = 1;
+    public float speed = 0;
     public float Yoffset = 0;
 
     // Start is called before the first frame update
@@ -20,5 +20,15 @@ public class TrackAnim : MonoBehaviour
     {
         Yoffset = (Yoffset + (speed * Time.deltaTime)) % 10;
         trackMat.SetTextureOffset("_MainTex", new Vector2(Yoffset, 0));
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public void SetSpeed(float speed2set)
+    {
+        speed = speed2set;
     }
 }
