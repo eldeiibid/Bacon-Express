@@ -9,6 +9,7 @@ public class SpeedControl : MonoBehaviour
     [SerializeField] Button speedUpButton;
     [SerializeField] Button speedDownButton;
     [SerializeField] TrackAnim trackAnim;
+    [SerializeField] TreeScript treeScript;
     [SerializeField] TextMeshProUGUI speedometer;
 
     // Start is called before the first frame update
@@ -23,12 +24,14 @@ public class SpeedControl : MonoBehaviour
     {
         if (trackAnim.GetSpeed() < 3) trackAnim.SetSpeed(trackAnim.GetSpeed()+1);
         UpdateSpeedometer((int)trackAnim.GetSpeed());
+        treeScript.SetSpeed(trackAnim.GetSpeed());
     }
 
     void DecreaseSpeed()
     {
         if (trackAnim.GetSpeed() > 0) trackAnim.SetSpeed(trackAnim.GetSpeed()-1);
         UpdateSpeedometer((int)trackAnim.GetSpeed());
+        treeScript.SetSpeed(trackAnim.GetSpeed());
     }
 
     void UpdateSpeedometer(int newSpeed)
