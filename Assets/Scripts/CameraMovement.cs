@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CameraMovement : MonoBehaviour
+public class CamaraMovement : MonoBehaviour
 {
     // Botones
     [SerializeField] Button botonFrenteIzquierda;
@@ -22,7 +22,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] GameObject canvasDerecha;
     [SerializeField] GameObject canvasTrasero;
 
-    // 0 = izquierda, 1 = frontal, 2 = derecha, 3 = atr√°s
+    // 0 = izquierda, 1 = frontal, 2 = derecha, 3 = atr·s
     int ladoActual = 1;
 
     void Start()
