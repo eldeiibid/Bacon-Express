@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class configurationMenu : MonoBehaviour
+public class ConfigurationMenu : MonoBehaviour
 {
     public GameObject panel;
 
@@ -31,7 +31,7 @@ public class configurationMenu : MonoBehaviour
     {
         panel.SetActive(true);
         inventoryUI.SetActive(false); // ocultamos el inventario
-        Time.timeScale = 0; // Se supone que esto pausa el jeugo al abrir el menú
+        Time.timeScale = 0; // Se supone que esto pausa el jeugo al abrir el menï¿½
     }
 
     public void CerrarMenu()
@@ -43,12 +43,13 @@ public class configurationMenu : MonoBehaviour
 
     public void IrAlInicio()
     {
+        Time.timeScale = 1; // despausamos el juego
         SceneManager.LoadScene("MainMenu");
     }
 
     void CambiarVolumenGeneral(float valor)
     {
-        AudioListener.volume = valor;
+        AudioListener.volume = valor * 0.1f;
         PlayerPrefs.SetFloat("volGeneral", valor);
     }
 
@@ -56,7 +57,7 @@ public class configurationMenu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("volMusica", valor);
 
-        // Aquí debes referenciar tu AudioSource de música
+        // Aquï¿½ debes referenciar tu AudioSource de mï¿½sica
         // ejemplo:
         // musicaSource.volume = valor;
     }

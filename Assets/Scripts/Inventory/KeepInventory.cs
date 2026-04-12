@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-// MUY IMPORTANTE ESTE SCRIPT para no perder en inventario entre una escena y otra. Créditos a mi chimichurri Yi.
+// MUY IMPORTANTE ESTE SCRIPT para no perder en inventario entre una escena y otra. Crï¿½ditos a mi chimichurri Yi.
 public class KeepInventory : MonoBehaviour
 {
     public static KeepInventory instance;
@@ -17,8 +17,7 @@ public class KeepInventory : MonoBehaviour
         Inventory.Instance.AddItem(miItem1);
         Inventory.Instance.AddItem(miItem2);
         Inventory.Instance.AddItem(miItem3);
-        Inventory.Instance.AddItem(miItem4);
-        Inventory.Instance.AddItem(miItem5);
+
     }
     void Awake()
     {
