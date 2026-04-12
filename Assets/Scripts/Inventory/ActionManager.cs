@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// Vale, este script define las 3 acciones que puedes hacer con un itme, para poder definirlas como acción actual (según lo que el jugador elija en los botones)
+
 public enum ActionType
 {
     None,

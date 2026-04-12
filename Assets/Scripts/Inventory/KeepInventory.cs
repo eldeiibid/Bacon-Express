@@ -10,11 +10,15 @@ public class KeepInventory : MonoBehaviour
     public ItemData miItem1;
     public ItemData miItem2;
     public ItemData miItem3;
+    public ItemData miItem4;
+    public ItemData miItem5;
     void Start()
     {
         Inventory.Instance.AddItem(miItem1);
         Inventory.Instance.AddItem(miItem2);
         Inventory.Instance.AddItem(miItem3);
+        Inventory.Instance.AddItem(miItem4);
+        Inventory.Instance.AddItem(miItem5);
     }
     void Awake()
     {
