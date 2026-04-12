@@ -11,15 +11,25 @@ public class Inventory : MonoBehaviour
 
     public event Action OnInventoryChanged;
 
+    public int maxItems = 4;
+
     void Awake()
     {
         Instance = this;
     }
 
-    public void AddItem(ItemData item)
+    public bool AddItem(ItemData item)
     {
+        if (items.Count >= maxItems)
+        {
+            FeedbackUI.Instance.Show("Inventario lleno");
+
+            return false;
+        }
+
         items.Add(item);
         OnInventoryChanged?.Invoke();
+        return true;
     }
 
     public void RemoveItem(ItemData item)
