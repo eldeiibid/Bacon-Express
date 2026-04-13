@@ -19,8 +19,6 @@ public class InventoryUI : MonoBehaviour
     // El item que el jugador tiene seleccionado
     private ItemData selectedItem;
 
-    public GameObject inventoryUI;
-
     void OnEnable()
     {
         Inventory.Instance.OnInventoryChanged += RefreshUI;

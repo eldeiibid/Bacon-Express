@@ -16,7 +16,7 @@ public class configurationMenu : MonoBehaviour
     {
         panel.SetActive(false);
 
-        // Cargar valores guardados
+        // Cargamos valores guardados
         sliderGeneral.value = PlayerPrefs.GetFloat("volGeneral", 1f);
         sliderMusica.value = PlayerPrefs.GetFloat("volMusica", 1f);
         sliderEfectos.value = PlayerPrefs.GetFloat("volEfectos", 1f);
@@ -43,6 +43,7 @@ public class configurationMenu : MonoBehaviour
 
     public void IrAlInicio()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 
