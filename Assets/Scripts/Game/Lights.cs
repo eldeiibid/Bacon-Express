@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Controla el botón y display de las luces.
 public class Lights : MonoBehaviour
 {
     [SerializeField] Button botonLuces;

@@ -6,13 +6,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//Controla la distancia necesaria para llegar al siguiente nivel. Además dispone en pantalla la restante para llegar al cambio de pantalla.
 public class DistanceControl : MonoBehaviour
 {
     [SerializeField] TrackAnim trackAnim;
     [SerializeField] TextMeshProUGUI distanceLeftDisplay;
     public GameObject InventoryUI;
 
-    const int INITIAL_DISTANCE = 1000;
+    public const int INITIAL_DISTANCE = 1000;
     float distance_done;
 
     void Start()

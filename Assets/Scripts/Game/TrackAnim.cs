@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//controla la animación del raíl.
 public class TrackAnim : MonoBehaviour
 {
 
@@ -18,6 +20,7 @@ public class TrackAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //La textura se va desplazando en Y en función de la velocidad y deltaTime.
         Yoffset = (Yoffset + (speed * Time.deltaTime)) % 10;
         trackMat.SetTextureOffset("_MainTex", new Vector2(Yoffset, 0));
     }

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Controla la velocidad del tren (las vías y arbol en realidad) a través de los botones y actualiza el valor del velocímetro
 public class SpeedControl : MonoBehaviour
 {
     [SerializeField] Button speedUpButton;
