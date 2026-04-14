@@ -17,10 +17,20 @@ public class InspectItem : MonoBehaviour
 
     public static InspectItem Instance;
 
+    private void Start()
+    {
+        panel.SetActive(false);
+    }
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
-        panel.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Show(ItemData item)

@@ -13,10 +13,20 @@ public class FeedbackUI : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private TMP_Text messageText;
 
+    private void Start()
+    {
+        panel.SetActive(false);
+    }
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
-        panel.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Show(string message)
