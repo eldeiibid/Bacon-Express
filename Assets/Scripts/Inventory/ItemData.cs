@@ -15,6 +15,8 @@ public class ItemData : ScriptableObject
     public bool canUse;
     public bool canCombine;
 
+    public int cost;
+
     [TextArea]
     public string description;
 
