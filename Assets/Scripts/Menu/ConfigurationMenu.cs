@@ -9,8 +9,11 @@ public class ConfigurationMenu : MonoBehaviour
     public Slider sliderGeneral;
     public Slider sliderMusica;
     public Slider sliderEfectos;
+    [SerializeField] Toggle hardModeToggle;
+    [SerializeField] MultiplyAI multiplyAI;
 
     public GameObject inventoryUI;
+    public const int HardModeBonus = 2;
 
     void Start()
     {
@@ -25,6 +28,7 @@ public class ConfigurationMenu : MonoBehaviour
         sliderGeneral.onValueChanged.AddListener(CambiarVolumenGeneral);
         sliderMusica.onValueChanged.AddListener(CambiarVolumenMusica);
         sliderEfectos.onValueChanged.AddListener(CambiarVolumenEfectos);
+        hardModeToggle.onValueChanged.AddListener(OnHardModeToggleChanged);
     }
 
     public void AbrirMenu()
@@ -68,5 +72,18 @@ public class ConfigurationMenu : MonoBehaviour
 
         // Igual que arriba, para efectos
         // efectosSource.volume = valor;
+    }
+    private void OnHardModeToggleChanged(bool isOn)
+    {
+        if (isOn)
+        {
+            multiplyAI.aiValue = Mathf.Min(multiplyAI.aiValue + HardModeBonus, 10);
+            Debug.Log($"[HardMode] Modo difícil activado — aiValue: {multiplyAI.aiValue}");
+        }
+        else
+        {
+            multiplyAI.aiValue = Mathf.Max(multiplyAI.aiValue - HardModeBonus, 1);
+            Debug.Log($"[HardMode] Modo difícil desactivado — aiValue: {multiplyAI.aiValue}");
+        }
     }
 }
