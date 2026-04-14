@@ -8,7 +8,8 @@ public class InventoryUI : MonoBehaviour
 {
     // Elementos de la interfaz
     public Transform container;          
-    public GameObject slotPrefab;       
+    public GameObject slotPrefab;
+    public GameObject UI;
 
     // Elementos del menú de opciones
     public GameObject contextMenu;
@@ -19,9 +20,25 @@ public class InventoryUI : MonoBehaviour
     // El item que el jugador tiene seleccionado
     private ItemData selectedItem;
 
+
+    public static InventoryUI Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void OnEnable()
     {
         Inventory.Instance.OnInventoryChanged += RefreshUI;
+        RefreshUI(); //esta es importante, sin esta linea no aparecía el inventario después de comprar. Puede parecer redundante pero si no no funciona.
     }
 
     void OnDisable()
@@ -143,6 +160,14 @@ public class InventoryUI : MonoBehaviour
     {
         contextMenu.SetActive(false);
         selectedItem = null;
+    }
+    public void ShowUI()
+    {
+        UI.SetActive(true);
+    }
+    public void CloseUI()
+    {
+        UI.SetActive(false);
     }
 
     // Buscamos si los objetos están uno en la lista de combinables del otro

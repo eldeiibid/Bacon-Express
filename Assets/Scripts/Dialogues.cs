@@ -6,7 +6,10 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 
-// Este script maneja todo el sistema de diálogos
+// Este script maneja todo el sistema de diálogos, es una movida y ha sido un lío horrible escribirlo.
+// Sospecho que hay ahora mismo cosas que están duplicadas y que son redundantes, pero me da miedo ponerme a tocar porque no lo quiero romper.
+// También hay algunas funcionalidades que debería haber puesto en un script aparte, pero todo eso ya lo haré. De momento con que funcione me siento satisfecha.
+// Lo de los nodos es una movida que flipas, tanto aquí en el script como en el editor de Unity. Y aunque le he puesto cabeceras a lso apartados se ven cortadas, pero no sé como ponerlas bien.
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -31,9 +34,12 @@ public class DialogueSystem : MonoBehaviour
 
     private HashSet<int> visitedNodes = new HashSet<int>();
 
-    //Aquí inicia el diálogo, al pulsar el botón "Hablar"
+
+    //Aquí inicia el diálogo, al pulsar el botón "Hablar". Se cierra el inventario y se habre una caja de texto.
     public void StartDialogue()
     {
+        InventoryUI.Instance.CloseUI();
+
         dialogueStarted = true;
         dialoguePanel.SetActive(true);
         actionBox.SetActive(false);
@@ -67,7 +73,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    // si el nodo en el que estamos va seguido de opciones, las mostramos
+    // si el nodo en el que estamos va seguido de opciones, las mostramos. Depende de la opción que elijamos pues compras un Item u otro (obviamente)
     private void ShowOptions()
     {
         DialogueOption[] options = nodes[currentNodeIndex].options;
@@ -77,7 +83,18 @@ public class DialogueSystem : MonoBehaviour
             if (i < options.Length && IsOptionUnlocked(options[i]))
             {
                 optionButtons[i].gameObject.SetActive(true);
-                optionTexts[i].text = options[i].text;
+
+                DialogueOption option = options[i];
+
+                // ESTO ES PARA LOS ITEMS QUE SE PUEDEN COMPRAR
+                if (option.itemToBuy != null)
+                {
+                    optionTexts[i].text = option.itemToBuy.itemName + " - " + option.itemToBuy.cost + "$";
+                }
+                else
+                {
+                    optionTexts[i].text = option.text;
+                }
 
                 int index = i;
                 optionButtons[i].onClick.RemoveAllListeners();
@@ -90,7 +107,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-   
+
     private void HideOptions()
     {
         foreach (Button btn in optionButtons)
@@ -99,17 +116,39 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    //seleccionamos una opción y se muestra el siguiente texto
+    //seleccionamos una opción y se muestra el siguiente texto, que se elije en el editor de Unity, no aquí, claro.
     private void SelectOption(int optionIndex)
     {
         DialogueOption selected = nodes[currentNodeIndex].options[optionIndex];
 
+        // Si es opción de compra (porque hay una que no lo es, la de "No me interesa nada") pues hay que mirar las monedillas que tienes y ver si puedes.
+        if (selected.itemToBuy != null)
+        {
+            int cost = selected.itemToBuy.cost;
+
+            // Intentar pagar
+            if (SistemaMonedas.Instance.SpendCoins(cost))
+            {
+                Debug.Log("Comprado: " + selected.itemToBuy.itemName);
+
+                //  Añadimos al inventario
+                Inventory.Instance.AddItem(selected.itemToBuy);
+            }
+            else
+            {
+                Debug.Log("No tienes suficiente dinero");
+                return; 
+            }
+        }
+
+        // Fin de diálogo
         if (selected.endsDialogue)
         {
             EndDialogue();
             return;
         }
 
+        // Avanzar diálogo
         currentNodeIndex = selected.nextNodeIndex;
 
         HideOptions();
@@ -132,7 +171,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    // acaba el diálogo y se vuelven a mostrar los botones "Hablar" e "Irse" 
+    // acaba el diálogo y se vuelven a mostrar los botones "Hablar" e "Irse", la caja de dialogo se cierra y vuelve a aparecer el inventario
     private void EndDialogue()
     {
         dialogueStarted = false;
@@ -140,9 +179,10 @@ public class DialogueSystem : MonoBehaviour
         actionBox.SetActive(true);
         dialogueText.text = "";
         HideOptions();
+        InventoryUI.Instance.ShowUI();
     }
 
-    // Con el update, al hacer click se avanza
+    // Con el update, al hacer click izquierdo se avanza el diálogo.
     private void Update()
     {
         if (!dialogueStarted) return;
@@ -184,7 +224,7 @@ public class DialogueSystem : MonoBehaviour
        
     }
 
-    // Esto checa si a ese nodo le siguen opciones 
+    // Esto checa si a ese nodo le siguen opciones, porque hay nodos que van seguidos de otros nodos, sin tener opciones que elegir ni nada.
     private bool HasAvailableOptions()
     {
         DialogueOption[] options = nodes[currentNodeIndex].options;
@@ -217,7 +257,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    // Para cambiar de escena al pulsar "Irse"
+    // Para cambiar de escena al pulsar "Irse", esto es una de las cosas que digo que pondré en otro script porque aquí no pinta nada.
     public void ChangeScene()
     {
         SceneManager.LoadScene("MainScene");
@@ -226,7 +266,7 @@ public class DialogueSystem : MonoBehaviour
 }
 
 
-// Vale, esto son las calses Nodo y Opción de los diálogos
+// Vale, esto son las calses Nodo y Opción de los diálogos. 
 [System.Serializable]
 public class DialogueNode
 {
@@ -252,10 +292,11 @@ public class DialogueOption
     [Header("Finalizar diálogo")]
     public bool endsDialogue;
 
-
+    [Header("Compra")]
+    public ItemData itemToBuy;
 }
 
-// Esto es para lo de las ramificaciones cuando ya has pasado por nodos específicos
+// Esto es para lo de las ramificaciones cuando ya has pasado por nodos específicos,
 public enum ConditionType
 {
     None,

@@ -16,6 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: c0991b034a8e7eb4599fca559a9af0c8, type: 3}
   canUse: 1
   canCombine: 1
+  cost: 5
   description: "Una pieza de metal bastante brillante y resistente. Aguantar\xE1
     un rato tapiando la puerta de la cabina."
   combinations:

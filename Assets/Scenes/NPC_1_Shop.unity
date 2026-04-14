@@ -1688,21 +1688,25 @@ MonoBehaviour:
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 0}
     - text: Item 2
       nextNodeIndex: 3
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 0}
     - text: Item 3
       nextNodeIndex: 4
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 0}
     - text: '"No hay nada que me interese"'
       nextNodeIndex: 5
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 0}
     nextNodeIndex: -1
   - dialogueText: Esa cinta es bastante buena.
     options:
@@ -1711,37 +1715,43 @@ MonoBehaviour:
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 11400000, guid: 30d6bb5aeb26ad648817d12850170f4c, type: 2}
     - text: "\xBFQu\xE9 m\xE1s tienes?"
       nextNodeIndex: 1
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 0}
     nextNodeIndex: -1
-  - dialogueText: Frase de item 2
+  - dialogueText: Martillo
     options:
-    - text: Me la quedo
+    - text: Me lo quedo
       nextNodeIndex: 6
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 11400000, guid: a8ce7beb1edf54e4c9da44ef8c315da6, type: 2}
     - text: "\xBFQu\xE9 m\xE1s tienes?"
       nextNodeIndex: 1
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 0}
     nextNodeIndex: -1
-  - dialogueText: Frase de item 3
+  - dialogueText: Metal brillante
     options:
-    - text: Me la quedo
+    - text: Me lo quedo
       nextNodeIndex: 6
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 11400000, guid: 6f5639d8342b9564ea33b4f787095acf, type: 2}
     - text: "\xBFQu\xE9 m\xE1s tienes?"
       nextNodeIndex: 1
       condition: 0
       requiredNode: 0
       endsDialogue: 0
+      itemToBuy: {fileID: 0}
     nextNodeIndex: -1
   - dialogueText: Hasta otra, amigo.
     options: []
