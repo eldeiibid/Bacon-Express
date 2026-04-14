@@ -8736,6 +8736,7 @@ MonoBehaviour:
   trackAnim: {fileID: 796697525}
   distanceLeftDisplay: {fileID: 1056102058}
   InventoryUI: {fileID: 1677375039}
+  escena: 2
 --- !u!1 &1636296688
 GameObject:
   m_ObjectHideFlags: 0

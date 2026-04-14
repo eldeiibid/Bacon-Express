@@ -423,7 +423,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 530, y: 500}
-  m_SizeDelta: {x: 650, y: 1080}
+  m_SizeDelta: {x: 700, y: 1150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &145660862
 MonoBehaviour:
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ee5a296af23528a4dbb9b192028d8919, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2736312db73990f4f894169fb4bb8e5d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1673,12 +1673,8 @@ MonoBehaviour:
   - {fileID: 900031536}
   typingTime: 0.05
   nodes:
-  - dialogueText: "Buenas noches, amigo. \xBFNecesitas surtirte de materiales? Tengo
-      objetos que podr\xEDan serte \xFAtiles... siempre y cuando tengas la suficiente
-      divisa, claro. \xBFC\xF3mo? \xBFQue los precios te parecen inflados? \xBFTu
-      has visto c\xF3mo est\xE1n las cosas ah\xED fuera? No encontrar\xE1s a nadie
-      m\xE1s en una larga distancia, as\xED que son lentejas. O las tomas, o te vas
-      por donde has venido."
+  - dialogueText: "Hola viajero. Me gustan mucho los mac an chis. \xBFQuieres ver
+      qu\xE9 tengo para comprar?"
     options: []
     nextNodeIndex: 1
   - dialogueText: Echa un vistazo.
@@ -1759,7 +1755,7 @@ MonoBehaviour:
   - dialogueText: Un placer hacer negocios contigo.
     options: []
     nextNodeIndex: -1
-  escena: 3
+  escena: 5
 --- !u!1 &1383634781
 GameObject:
   m_ObjectHideFlags: 0

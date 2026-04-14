@@ -28,6 +28,8 @@ public class DialogueSystem : MonoBehaviour
     [Header("Diálogo")]
     [SerializeField] private DialogueNode[] nodes;
 
+    public int escena;
+
     private int currentNodeIndex;
     private bool dialogueStarted;
     private bool isTyping;
@@ -260,7 +262,7 @@ public class DialogueSystem : MonoBehaviour
     // Para cambiar de escena al pulsar "Irse", esto es una de las cosas que digo que pondré en otro script porque aquí no pinta nada.
     public void ChangeScene()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(escena);
     }
 
 }
