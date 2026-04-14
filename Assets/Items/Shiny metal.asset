@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shiny metal
   m_EditorClassIdentifier: 
   itemName: Metal brillante
-  icon: {fileID: 21300000, guid: c0991b034a8e7eb4599fca559a9af0c8, type: 3}
+  icon: {fileID: 21300000, guid: a77f7cbf4039423448f02e102bd071da, type: 3}
   canUse: 1
   canCombine: 1
   cost: 5

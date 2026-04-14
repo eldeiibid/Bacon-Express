@@ -13,7 +13,8 @@ public class DistanceControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI distanceLeftDisplay;
     public GameObject InventoryUI;
 
-    public const int INITIAL_DISTANCE = 1000;
+    //LA DISTANCIA A RECORRER PARA PASAR A LA SIGUIENTE ESCENA EN METROS.
+    public const int INITIAL_DISTANCE = 50; //Valor recomendado: 1000m
     float distance_done;
 
     void Start()
@@ -41,8 +42,8 @@ public class DistanceControl : MonoBehaviour
         //Cambiar por el valor de la escena de la estación
         if (value <= 0)
         {
-            SceneManager.LoadScene("MainMenu");
-            InventoryUI.SetActive(false);
+            SceneManager.LoadScene("NPC_1_Shop");
+            //InventoryUI.SetActive(false);
         }
 
     }
