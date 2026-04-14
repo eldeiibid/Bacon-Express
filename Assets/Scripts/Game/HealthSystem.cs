@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 //Controla el sistema de salud del juego
 public class HealthSystem : MonoBehaviour
 {
-
+    [Header("External References")]
     [SerializeField] GameObject Heart1; 
     [SerializeField] GameObject Heart2; 
     [SerializeField] GameObject Heart3;
@@ -15,14 +16,9 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] GameObject shattered_glass;
     [SerializeField] GameObject very_shattered_glass;
 
-
-
+    [Header("Health")]
+    [Range(0, 3)]
     public int health = 3;
-
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -68,5 +64,15 @@ public class HealthSystem : MonoBehaviour
             very_shattered_glass.SetActive(false);
         }
 
+    }
+
+    public void decreaseHealth()
+    {
+        health--;
+    }
+
+    public void increaseHealth()
+    {
+        health++;
     }
 }

@@ -46,4 +46,9 @@ public class DistanceControl : MonoBehaviour
         }
 
     }
+
+    public int getDistanceDone()
+    {
+        return (int) distance_done;
+    }
 }
