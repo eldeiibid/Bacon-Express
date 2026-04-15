@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.15686275, g: 0.13725491, b: 0.0627451, a: 1}
+  m_FogColor: {r: 0.9607843, g: 0.9764706, b: 0.98039216, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
   m_LinearFogStart: 0
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.25490198, g: 0.24705884, b: 0.227451, a: 0}
-  m_SkyboxMaterial: {fileID: 2100000, guid: e0fa59ae00eb0e44783291579343bbaf, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: faa4f4342d2e0a14895085f4776a3f04, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -96,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 11cf7243cb151264d88a8901c6811a7b, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: c3547a089478e63469521ce3c606050d, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -9725,7 +9725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1752403907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10316,7 +10316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1968901537
 MonoBehaviour:
   m_ObjectHideFlags: 0

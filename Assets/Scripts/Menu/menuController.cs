@@ -9,7 +9,7 @@ public class menuController : MonoBehaviour
     // Start is called before the first frame update
     public void jugar()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Level_1");
     }
 
     // Update is called once per frame
