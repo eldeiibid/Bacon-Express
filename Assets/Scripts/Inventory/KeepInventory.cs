@@ -37,9 +37,9 @@ public class KeepInventory : MonoBehaviour
     }
 
     // ESTO HAY QUE BORRARLO, SOLO LO PUSE PARA HACER LA PRUEBA DE LLEVARME EL INVENTARIO A LA TIENDA. y hay que borrar también el botón en el editor de unity.
-    public void GoToShop()
+    /*public void GoToShop()
     {
         SceneManager.LoadScene("NPC_1_Shop");
     }
-
+    */
 }
