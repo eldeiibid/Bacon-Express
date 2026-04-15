@@ -15,7 +15,7 @@ public class DistanceControl : MonoBehaviour
     public int escena;
 
     //LA DISTANCIA A RECORRER PARA PASAR A LA SIGUIENTE ESCENA EN METROS.
-    public const int INITIAL_DISTANCE = 50; //Valor recomendado: 1000m
+    public int INITIAL_DISTANCE = 50; //Valor recomendado: 1000m
     float distance_done;
 
     void Start()

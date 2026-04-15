@@ -1755,7 +1755,7 @@ MonoBehaviour:
   - dialogueText: Un placer hacer negocios contigo.
     options: []
     nextNodeIndex: -1
-  escena: 0
+  escena: 7
 --- !u!1 &1383634781
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,7 +43,6 @@ public class MultiplyAI : MonoBehaviour
         
     }
 
-    // ── IDLE ──────────────────────────────────────────────
     private void UpdateIdle()
     {
         if (timer <= 0f)
@@ -52,12 +51,11 @@ public class MultiplyAI : MonoBehaviour
         }
     }
 
-    // ── ON DOOR ───────────────────────────────────────────
     private void UpdateOnDoor()
     {
         if (doorController.isClosed)
         {
-            Debug.Log("[EnemyAI] Puerta cerrada — el enemigo retrocede.");
+            Debug.Log("[Multiply] Puerta cerrada — el enemigo retrocede.");
             ChangeState(EnemyState.Idle);
             return;
         }
@@ -65,29 +63,28 @@ public class MultiplyAI : MonoBehaviour
         if (timer <= 0f)
         {
             healthSystem.decreaseHealth();
-            Debug.Log("[EnemyAI] ¡El enemigo daña al jugador!");
+            Debug.Log("[Multiply] ¡El enemigo daña al jugador!");
             //Llamar a la funcion de jumpsacare.
             jumpscareController.TriggerJumpscare(); 
             ChangeState(EnemyState.Idle);
         }
     }
 
-    // ── DISTANCE MILESTONE ────────────────────────────────
+
     private void CheckDistanceMilestone()
     {
         int currentDistance = distanceControl.getDistanceDone();
-        int currentThreshold = currentDistance / 20; //Valor recomendado: 500m
+        int currentThreshold = currentDistance / 50; //Valor recomendado: 500m
 
         if (currentThreshold > lastDistanceThreshold)
         {
             lastDistanceThreshold = currentThreshold;
             aiValue = Mathf.Min(aiValue + 1, 10);
 
-            Debug.Log($"[EnemyAI] ¡Nuevo umbral de distancia! ({currentDistance}m) — aiValue sube a: {aiValue}");
+            Debug.Log($"[Multiply] ¡Nuevo umbral de distancia! ({currentDistance}m) — aiValue sube a: {aiValue}");
         }
     }
 
-    // ── HELPERS ───────────────────────────────────────────
     private void ChangeState(EnemyState newState)
     {
         currentState = newState;
@@ -104,19 +101,19 @@ public class MultiplyAI : MonoBehaviour
         }
 
         ResetTimer(newState);
-        Debug.Log($"[EnemyAI] Nuevo estado: {newState}  |  Próximo timer: {timer:F2}s");
+        Debug.Log($"[MultiplyAI] Nuevo estado: {newState}  |  Próximo timer: {timer:F2}s");
     }
 
     private void ResetTimer(EnemyState state)
     {
         if (state == EnemyState.OnDoor)
         {
-            timer = 3f; //Valor recomendado, 10 segundos. 
+            timer = 3f; //Valor recomendado, 5 segundos. 
         }
         else
         {
             //Valores recomendados para partida normal, entre 30 y 60 segundos.
-            float random = Random.Range(12f, 24f);
+            float random = Random.Range(20f, 40f);
             timer = random - aiValue;
         }
     }

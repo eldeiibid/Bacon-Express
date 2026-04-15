@@ -1344,7 +1344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 1374079599}
-  coins: 10
+  coins: 20
 --- !u!4 &270653449
 Transform:
   m_ObjectHideFlags: 0
@@ -8737,6 +8737,7 @@ MonoBehaviour:
   distanceLeftDisplay: {fileID: 1056102058}
   InventoryUI: {fileID: 1677375039}
   escena: 2
+  INITIAL_DISTANCE: 50
 --- !u!1 &1636296688
 GameObject:
   m_ObjectHideFlags: 0

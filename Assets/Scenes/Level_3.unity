@@ -8737,6 +8737,7 @@ MonoBehaviour:
   distanceLeftDisplay: {fileID: 1056102058}
   InventoryUI: {fileID: 1677375039}
   escena: 6
+  INITIAL_DISTANCE: 200
 --- !u!1 &1636296688
 GameObject:
   m_ObjectHideFlags: 0
@@ -8781,7 +8782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7e43bb81a5e6042a0e826f0d839572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiValue: 2
+  aiValue: 4
   healthSystem: {fileID: 1706930586}
   doorController: {fileID: 1130222115}
   distanceControl: {fileID: 1593488717}
