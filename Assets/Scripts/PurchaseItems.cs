@@ -15,6 +15,8 @@ public class PurchaseItems : MonoBehaviour
         else
         {
             Debug.Log("No puedes comprar este item");
+
+
         }
     }
 }

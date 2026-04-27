@@ -16,6 +16,7 @@ public class InventoryUI : MonoBehaviour
     public Button useButton;
     public Button combineButton;
     public Button inspectButton;
+    public Button throwButton;
 
     // El item que el jugador tiene seleccionado
     private ItemData selectedItem;
@@ -114,11 +115,13 @@ public class InventoryUI : MonoBehaviour
         useButton.onClick.RemoveAllListeners();
         combineButton.onClick.RemoveAllListeners();
         inspectButton.onClick.RemoveAllListeners();
+        throwButton.onClick.RemoveAllListeners();
 
         // Al pulsar cada botón hace una acción (ovbiamente)
         useButton.onClick.AddListener(OnUse);
         combineButton.onClick.AddListener(OnCombine);
         inspectButton.onClick.AddListener(OnInspect);
+        throwButton.onClick.AddListener(OnThrow);
     }
 
     //  Acción: Usar
@@ -152,6 +155,13 @@ public class InventoryUI : MonoBehaviour
     void OnInspect()
     {
         InspectItem.Instance.Show(selectedItem);
+        contextMenu.SetActive(false);
+    }
+
+    void OnThrow()
+    {
+        Inventory.Instance.RemoveItem(selectedItem);
+        //ActionManager.Instance.SetThrow(selectedItem);
         contextMenu.SetActive(false);
     }
 
