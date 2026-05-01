@@ -7,8 +7,7 @@ public enum ActionType
     None,
     Use,
     Combine,
-    Inspect,
-    Throw
+    Inspect
 }
 
 public class ActionManager : MonoBehaviour
@@ -38,12 +37,6 @@ public class ActionManager : MonoBehaviour
     public void SetInspect(ItemData item)
     {
         currentAction = ActionType.Inspect;
-        selectedItem = item;
-    }
-
-    public void SetThrow(ItemData item)
-    {
-        currentAction = ActionType.Throw;
         selectedItem = item;
     }
     public void ClearAction()

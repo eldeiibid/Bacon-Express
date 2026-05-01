@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[System.Serializable]
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
@@ -25,10 +24,7 @@ public class Inventory : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    public bool CanAddItem()
-    {
-        return items.Count < maxItems;
-    }
+
     public bool AddItem(ItemData item)
     {
         if (items.Count >= maxItems)

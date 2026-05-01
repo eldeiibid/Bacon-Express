@@ -9,7 +9,7 @@ using UnityEngine;
 // Os presento:
 // El Des-socialistador 
 
-[System.Serializable]
+
 public class SistemaMonedas : MonoBehaviour
 {
     public static SistemaMonedas Instance;
@@ -18,7 +18,7 @@ public class SistemaMonedas : MonoBehaviour
 
     [SerializeField] private TMP_Text coinsText;
 
-    public int coins = 0;
+    public int coins = 10;
 
     private void Awake()
     {

@@ -28,16 +28,9 @@ public class DialogueSystem : MonoBehaviour
     [Header("Diálogo")]
     [SerializeField] private DialogueNode[] nodes;
 
-<<<<<<< Updated upstream
-=======
-
-    public int escena;
-
->>>>>>> Stashed changes
     private int currentNodeIndex;
     private bool dialogueStarted;
     private bool isTyping;
-
 
     private HashSet<int> visitedNodes = new HashSet<int>();
 
@@ -61,8 +54,6 @@ public class DialogueSystem : MonoBehaviour
     // Esto hace que el texto se vaya escribiendo caracter a caracter
     private IEnumerator ShowNode()
     {
-        visitedNodes.Add(currentNodeIndex);
-
         isTyping = true;
         dialogueText.text = "";
 
@@ -135,25 +126,19 @@ public class DialogueSystem : MonoBehaviour
         {
             int cost = selected.itemToBuy.cost;
 
-            // 1. Inventario lleno
-            if (!Inventory.Instance.CanAddItem())
+            // Intentar pagar
+            if (SistemaMonedas.Instance.SpendCoins(cost))
             {
-                Debug.Log("Inventario lleno");
-                GoToNoSpaceNode(selected);
-                return;
-            }
+                Debug.Log("Comprado: " + selected.itemToBuy.itemName);
 
-            // 2. Dinero insuficiente
-            if (!SistemaMonedas.Instance.SpendCoins(cost))
+                //  Añadimos al inventario
+                Inventory.Instance.AddItem(selected.itemToBuy);
+            }
+            else
             {
                 Debug.Log("No tienes suficiente dinero");
-                GoToNoCoinsNode(selected);
-                return;
+                return; 
             }
-
-            // 3. Compra válida
-            Inventory.Instance.AddItem(selected.itemToBuy);
-            Debug.Log("Comprado: " + selected.itemToBuy.itemName);
         }
 
         // Fin de diálogo
@@ -195,25 +180,6 @@ public class DialogueSystem : MonoBehaviour
         dialogueText.text = "";
         HideOptions();
         InventoryUI.Instance.ShowUI();
-    }
-
-    private void GoToNoSpaceNode(DialogueOption option)
-    {
-        if (option.noSpaceIndex != -1)
-        {
-            currentNodeIndex = option.noSpaceIndex;
-            HideOptions();
-            StartCoroutine(ShowNode());
-        }
-    }
-    private void GoToNoCoinsNode(DialogueOption option)
-    {
-        if (option.noCoindeIndex != -1)
-        {
-            currentNodeIndex = option.noCoindeIndex;
-            HideOptions();
-            StartCoroutine(ShowNode());
-        }
     }
 
     // Con el update, al hacer click izquierdo se avanza el diálogo.
@@ -319,7 +285,7 @@ public class DialogueOption
     public string text;
     public int nextNodeIndex;
 
-
+    
     public ConditionType condition;
     public int requiredNode;
 
@@ -328,13 +294,6 @@ public class DialogueOption
 
     [Header("Compra")]
     public ItemData itemToBuy;
-
-    [Header("Nodo si no hay dinero")]
-    public int noCoindeIndex = -1;
-
-    [Header("Nodo si no hay espacio")]
-    public int noSpaceIndex = -1;
-
 }
 
 // Esto es para lo de las ramificaciones cuando ya has pasado por nodos específicos,

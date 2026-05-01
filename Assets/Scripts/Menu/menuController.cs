@@ -1,61 +1,29 @@
-using System.IO;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class menuController : MonoBehaviour
 {
-    public Image buttonImage;
-    public Sprite newSprite;
-
-    string savePath;
-
-    void Awake()
+    // Start is called before the first frame update
+    public void jugar()
     {
-<<<<<<< Updated upstream
         SceneManager.LoadScene("MainScene");
-=======
-        savePath = Path.Combine(Application.persistentDataPath, "gameData.save");
     }
 
-    // NUEVA PARTIDA
-    public void NuevaPartida()
-    {
-        if (File.Exists(savePath))
-        {
-            File.Delete(savePath);
-            Debug.Log("Save eliminado");
-        }
-
-        SceneManager.LoadScene("Level_1");
->>>>>>> Stashed changes
-    }
-
-    // CONTINUAR PARTIDA
-    public void ContinuarPartida()
-    {
-        GameData data = SaveGameData.LoadGameData();
-
-        if (data != null)
-        {
-            // Cargar escena guardada
-            SceneManager.LoadScene(data.sceneName);
-
-        }
-        else
-        {
-            Debug.LogWarning("No hay datos guardados");
-        }
-    }
-
+    // Update is called once per frame
     public void salir()
     {
         Application.Quit();
     }
 
+    public Image buttonImage;
+    public Sprite newSprite;
+
     public void ChangeButtonImage()
     {
-        if (buttonImage != null && newSprite != null)
+        if(buttonImage != null && newSprite != null)
         {
             buttonImage.sprite = newSprite;
         }
