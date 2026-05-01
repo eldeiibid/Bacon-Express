@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using static UnityEditor.Progress;
 
-// MUY IMPORTANTE ESTE SCRIPT para no perder en inventario entre una escena y otra. Créditos a mi chimichurri Yi.
+
+// MUY IMPORTANTE ESTE SCRIPT para no perder en inventario entre una escena y otra. Crï¿½ditos a mi chimichurri Yi.
 public class KeepInventory : MonoBehaviour
 {
     public static KeepInventory instance;
@@ -36,7 +35,7 @@ public class KeepInventory : MonoBehaviour
         }
     }
 
-    // ESTO HAY QUE BORRARLO, SOLO LO PUSE PARA HACER LA PRUEBA DE LLEVARME EL INVENTARIO A LA TIENDA. y hay que borrar también el botón en el editor de unity.
+    // ESTO HAY QUE BORRARLO, SOLO LO PUSE PARA HACER LA PRUEBA DE LLEVARME EL INVENTARIO A LA TIENDA. y hay que borrar tambiï¿½n el botï¿½n en el editor de unity.
     /*public void GoToShop()
     {
         SceneManager.LoadScene("NPC_1_Shop");

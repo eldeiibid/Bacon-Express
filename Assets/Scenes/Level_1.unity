@@ -2704,7 +2704,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508920303}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -8737,7 +8737,7 @@ MonoBehaviour:
   distanceLeftDisplay: {fileID: 1056102058}
   InventoryUI: {fileID: 1677375039}
   escena: 2
-  INITIAL_DISTANCE: 50
+  INITIAL_DISTANCE: 1000
 --- !u!1 &1636296688
 GameObject:
   m_ObjectHideFlags: 0
@@ -8788,6 +8788,7 @@ MonoBehaviour:
   distanceControl: {fileID: 1593488717}
   jumpscareController: {fileID: 443405523}
   multiplyImage: {fileID: 508920305}
+  timer: 0
 --- !u!1 &1644669347
 GameObject:
   m_ObjectHideFlags: 0
@@ -10395,8 +10396,8 @@ RectTransform:
   m_Children:
   - {fileID: 1764173463}
   - {fileID: 508920304}
-  - {fileID: 1309064369}
   - {fileID: 955335640}
+  - {fileID: 1309064369}
   - {fileID: 783215617}
   - {fileID: 85451577}
   - {fileID: 1130222111}

@@ -17,8 +17,9 @@ public class MultiplyAI : MonoBehaviour
     [SerializeField] Image multiplyImage;
 
     private EnemyState currentState;
-    private float timer;
+    public float timer;
     private int lastDistanceThreshold = 0;
+    private const int DISTANCE_REQUIRED_TO_INCREASE_AI = 20;  //Valor recomendado: 500m
 
     private void Start()
     {
@@ -53,20 +54,26 @@ public class MultiplyAI : MonoBehaviour
 
     private void UpdateOnDoor()
     {
-        if (doorController.isClosed)
-        {
-            Debug.Log("[Multiply] Puerta cerrada — el enemigo retrocede.");
-            ChangeState(EnemyState.Idle);
-            return;
-        }
-
+        //Cuando acaba el timer
         if (timer <= 0f)
         {
-            healthSystem.decreaseHealth();
-            Debug.Log("[Multiply] ¡El enemigo daña al jugador!");
-            //Llamar a la funcion de jumpsacare.
-            jumpscareController.TriggerJumpscare(); 
-            ChangeState(EnemyState.Idle);
+            //Si se mantiente cerrada la puerta
+            if (doorController.isClosed)
+            {
+                Debug.Log("[Multiply] Puerta cerrada — el enemigo retrocede.");
+                ChangeState(EnemyState.Idle);
+                return;
+            }
+
+            else
+            {
+                healthSystem.decreaseHealth();
+                Debug.Log("[Multiply] ¡El enemigo daña al jugador!");
+                //Llamar a la funcion de jumpsacare.
+                jumpscareController.TriggerJumpscare(); 
+                ChangeState(EnemyState.Idle);
+            }
+
         }
     }
 
@@ -74,7 +81,7 @@ public class MultiplyAI : MonoBehaviour
     private void CheckDistanceMilestone()
     {
         int currentDistance = distanceControl.getDistanceDone();
-        int currentThreshold = currentDistance / 50; //Valor recomendado: 500m
+        int currentThreshold = currentDistance / DISTANCE_REQUIRED_TO_INCREASE_AI;
 
         if (currentThreshold > lastDistanceThreshold)
         {
