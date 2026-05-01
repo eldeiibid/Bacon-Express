@@ -25,6 +25,11 @@ public class Inventory : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public bool CanAddItem()
+    {
+        return items.Count < maxItems;
+    }
+
     public bool AddItem(ItemData item)
     {
         if (items.Count >= maxItems)

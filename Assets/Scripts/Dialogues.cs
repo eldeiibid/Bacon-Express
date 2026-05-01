@@ -56,6 +56,8 @@ public class DialogueSystem : MonoBehaviour
     // Esto hace que el texto se vaya escribiendo caracter a caracter
     private IEnumerator ShowNode()
     {
+        visitedNodes.Add(currentNodeIndex);
+
         isTyping = true;
         dialogueText.text = "";
 
@@ -128,19 +130,25 @@ public class DialogueSystem : MonoBehaviour
         {
             int cost = selected.itemToBuy.cost;
 
-            // Intentar pagar
-            if (SistemaMonedas.Instance.SpendCoins(cost))
+            // 1. Inventario lleno
+            if (!Inventory.Instance.CanAddItem())
             {
-                Debug.Log("Comprado: " + selected.itemToBuy.itemName);
-
-                //  Añadimos al inventario
-                Inventory.Instance.AddItem(selected.itemToBuy);
+                Debug.Log("Inventario lleno");
+                SpaceFailNode(selected);
+                return;
             }
-            else
+
+            // 2. Dinero insuficiente
+            if (!SistemaMonedas.Instance.SpendCoins(cost))
             {
                 Debug.Log("No tienes suficiente dinero");
-                return; 
+                CoinFailNode(selected);
+                return;
             }
+
+            // 3. Compra válida
+            Inventory.Instance.AddItem(selected.itemToBuy);
+            Debug.Log("Comprado: " + selected.itemToBuy.itemName);
         }
 
         // Fin de diálogo
@@ -155,6 +163,24 @@ public class DialogueSystem : MonoBehaviour
 
         HideOptions();
         StartCoroutine(ShowNode());
+    }
+    private void CoinFailNode(DialogueOption option)
+    {
+        if (option.noCoinNodeIndex != -1)
+        {
+            currentNodeIndex = option.noCoinNodeIndex;
+            HideOptions();
+            StartCoroutine(ShowNode());
+        }
+    }
+    private void SpaceFailNode(DialogueOption option)
+    {
+        if (option.noSpaceNodeIndex != -1)
+        {
+            currentNodeIndex = option.noSpaceNodeIndex;
+            HideOptions();
+            StartCoroutine(ShowNode());
+        }
     }
 
     // esto es para hacer ramificaciones en los diálogos SI Y SOLO SI ya se han visto nodos específicos.
@@ -296,6 +322,12 @@ public class DialogueOption
 
     [Header("Compra")]
     public ItemData itemToBuy;
+
+    [Header("Nodo si no hay dinero")]
+    public int noCoinNodeIndex = -1;
+
+    [Header("Nodo si no hay dinero")]
+    public int noSpaceNodeIndex = -1;
 }
 
 // Esto es para lo de las ramificaciones cuando ya has pasado por nodos específicos,

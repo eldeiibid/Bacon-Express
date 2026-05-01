@@ -1689,26 +1689,35 @@ MonoBehaviour:
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 0}
+      noCoinNodeIndex: -1
+      noSpaceNodeIndex: -1
     - text: Martillo
       nextNodeIndex: 3
       condition: 0
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 0}
+      noCoinNodeIndex: -1
+      noSpaceNodeIndex: -1
     - text: Metal brillante
       nextNodeIndex: 4
       condition: 0
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 0}
+      noCoinNodeIndex: -1
+      noSpaceNodeIndex: -1
     - text: '"No hay nada que me interese"'
       nextNodeIndex: 5
       condition: 0
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 0}
+      noCoinNodeIndex: -1
+      noSpaceNodeIndex: -1
     nextNodeIndex: -1
-  - dialogueText: Esa cinta es bastante buena.
+  - dialogueText: Esa cinta es bastante resistente, seguro que puedes arreglar algo
+      con ella.
     options:
     - text: Me la quedo
       nextNodeIndex: 6
@@ -1716,14 +1725,18 @@ MonoBehaviour:
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 11400000, guid: 30d6bb5aeb26ad648817d12850170f4c, type: 2}
+      noCoinNodeIndex: 7
+      noSpaceNodeIndex: 8
     - text: "\xBFQu\xE9 m\xE1s tienes?"
       nextNodeIndex: 1
       condition: 0
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 0}
+      noCoinNodeIndex: -1
+      noSpaceNodeIndex: -1
     nextNodeIndex: -1
-  - dialogueText: Martillo
+  - dialogueText: "Este martillo es algo simple, pero seguro que puede serte \xFAtil."
     options:
     - text: Me lo quedo
       nextNodeIndex: 6
@@ -1731,14 +1744,19 @@ MonoBehaviour:
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 11400000, guid: a8ce7beb1edf54e4c9da44ef8c315da6, type: 2}
+      noCoinNodeIndex: 7
+      noSpaceNodeIndex: 8
     - text: "\xBFQu\xE9 m\xE1s tienes?"
       nextNodeIndex: 1
       condition: 0
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 0}
+      noCoinNodeIndex: -1
+      noSpaceNodeIndex: -1
     nextNodeIndex: -1
-  - dialogueText: Metal brillante
+  - dialogueText: "Es un trozo de metal que encontr\xE9 por ah\xED, \xBFa que es
+      bonito?"
     options:
     - text: Me lo quedo
       nextNodeIndex: 6
@@ -1746,17 +1764,28 @@ MonoBehaviour:
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 11400000, guid: 6f5639d8342b9564ea33b4f787095acf, type: 2}
+      noCoinNodeIndex: 7
+      noSpaceNodeIndex: 8
     - text: "\xBFQu\xE9 m\xE1s tienes?"
       nextNodeIndex: 1
       condition: 0
       requiredNode: 0
       endsDialogue: 0
       itemToBuy: {fileID: 0}
+      noCoinNodeIndex: -1
+      noSpaceNodeIndex: -1
     nextNodeIndex: -1
   - dialogueText: Hasta otra, amigo.
     options: []
     nextNodeIndex: -1
   - dialogueText: Un placer hacer negocios contigo.
+    options: []
+    nextNodeIndex: -1
+  - dialogueText: "\xBFMe tomas el pelo? Si no tienes suficiente dinero no me hagas
+      perder el tiempo."
+    options: []
+    nextNodeIndex: -1
+  - dialogueText: No parece que tengas suficiente espacio para guardar esto, colega.
     options: []
     nextNodeIndex: -1
   escena: 3
