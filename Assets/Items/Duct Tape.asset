@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Duct Tape
   m_EditorClassIdentifier: 
   itemName: Cinta adhesiva
-  icon: {fileID: 21300000, guid: 439b3cd51515ae44aaf639e72af8c379, type: 3}
+  icon: {fileID: 21300000, guid: 02c57ada0ce6abd46aabadd367ebd0d0, type: 3}
   canUse: 1
   canCombine: 1
   cost: 3
