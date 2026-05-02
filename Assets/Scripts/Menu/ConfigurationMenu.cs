@@ -17,6 +17,14 @@ public class ConfigurationMenu : MonoBehaviour
 
     public bool diffOn = false;
 
+
+    // DATOS PARA GAURDAR PARTIDA
+    public HealthSystem sistemaVida;
+    public SistemaMonedas sistemaMonedas;
+    public ConfigurationMenu menuConfig;
+    public Inventory inventario;
+
+
     void Start()
     {
         panel.SetActive(false);
@@ -51,6 +59,20 @@ public class ConfigurationMenu : MonoBehaviour
     {
         Time.timeScale = 1; // despausamos el juego
         SceneManager.LoadScene("MainMenu");
+    }
+    public void Guardar()
+    {
+        Scene escenaActual = SceneManager.GetActiveScene();
+
+        SaveGameData.SGameData(
+            sistemaVida,
+            sistemaMonedas,
+            menuConfig,
+            escenaActual,
+            inventario
+        );
+
+        Debug.Log("Partida guardada");
     }
 
     void CambiarVolumenGeneral(float valor)
