@@ -15,6 +15,8 @@ public class ConfigurationMenu : MonoBehaviour
     public GameObject inventoryUI;
     public const int HardModeBonus = 2;
 
+    public bool diffOn = false;
+
     void Start()
     {
         panel.SetActive(false);
@@ -77,11 +79,13 @@ public class ConfigurationMenu : MonoBehaviour
     {
         if (isOn)
         {
+            diffOn = true;
             multiplyAI.aiValue = Mathf.Min(multiplyAI.aiValue + HardModeBonus, 10);
             Debug.Log($"[HardMode] Modo difícil activado — aiValue: {multiplyAI.aiValue}");
         }
         else
         {
+            diffOn = false;
             multiplyAI.aiValue = Mathf.Max(multiplyAI.aiValue - HardModeBonus, 1);
             Debug.Log($"[HardMode] Modo difícil desactivado — aiValue: {multiplyAI.aiValue}");
         }
