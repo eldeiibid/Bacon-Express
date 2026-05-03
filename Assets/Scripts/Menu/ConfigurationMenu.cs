@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class ConfigurationMenu : MonoBehaviour
 {
     public GameObject panel;
+    public GameObject tutorial;
 
     public Slider sliderGeneral;
     public Slider sliderMusica;
@@ -53,6 +54,16 @@ public class ConfigurationMenu : MonoBehaviour
         panel.SetActive(false);
         inventoryUI.SetActive(true); // volvemos a mostrarlo
         Time.timeScale = 1; // despausamos el juego
+    }
+
+    public void AbrirTutorial()
+    {
+        tutorial.SetActive(true);
+    }
+
+    public void CerrarTutorial()
+    {
+        tutorial.SetActive(false);
     }
 
     public void IrAlInicio()
