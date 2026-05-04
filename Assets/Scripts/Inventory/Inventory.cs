@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+[System.Serializable]
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
 
     public List<ItemData> items = new List<ItemData>();
+
+    public List<string> itemIDs = new List<string>();
 
     public event Action OnInventoryChanged;
 
@@ -25,6 +28,10 @@ public class Inventory : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void NotifyInventoryChanged()
+    {
+        OnInventoryChanged?.Invoke();
+    }
     public bool CanAddItem()
     {
         return items.Count < maxItems;

@@ -8,20 +8,6 @@ public class KeepInventory : MonoBehaviour
 {
     public static KeepInventory instance;
 
-
-    public ItemData miItem1;
-    public ItemData miItem2;
-    public ItemData miItem3;
-    public ItemData miItem4;
-    public ItemData miItem5;
-    void Start()
-    {
-        /*Inventory.Instance.AddItem(miItem1);
-        Inventory.Instance.AddItem(miItem2);
-        Inventory.Instance.AddItem(miItem3);
-        Inventory.Instance.AddItem(miItem4);
-        Inventory.Instance.AddItem(miItem5);*/
-    }
     void Awake()
     {
         if (instance == null)
@@ -34,11 +20,4 @@ public class KeepInventory : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    // ESTO HAY QUE BORRARLO, SOLO LO PUSE PARA HACER LA PRUEBA DE LLEVARME EL INVENTARIO A LA TIENDA. y hay que borrar tambi�n el bot�n en el editor de unity.
-    /*public void GoToShop()
-    {
-        SceneManager.LoadScene("NPC_1_Shop");
-    }
-    */
 }

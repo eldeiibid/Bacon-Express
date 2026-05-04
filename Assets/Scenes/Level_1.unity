@@ -3155,6 +3155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  itemIDs: []
   maxItems: 4
 --- !u!1 &508920303
 GameObject:
@@ -7166,11 +7167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0dc5dadb9b27f440901f83b51e3ef00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miItem1: {fileID: 11400000, guid: 6f5639d8342b9564ea33b4f787095acf, type: 2}
-  miItem2: {fileID: 11400000, guid: a8ce7beb1edf54e4c9da44ef8c315da6, type: 2}
-  miItem3: {fileID: 11400000, guid: 30d6bb5aeb26ad648817d12850170f4c, type: 2}
-  miItem4: {fileID: 0}
-  miItem5: {fileID: 0}
 --- !u!4 &1038127414
 Transform:
   m_ObjectHideFlags: 0
@@ -10346,7 +10342,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -11606,7 +11602,7 @@ MonoBehaviour:
   useButton: {fileID: 1075283536}
   combineButton: {fileID: 170942783}
   inspectButton: {fileID: 390791715}
-  throwButton: {fileID: 0}
+  throwButton: {fileID: 1560725047}
 --- !u!114 &1677375042
 MonoBehaviour:
   m_ObjectHideFlags: 0

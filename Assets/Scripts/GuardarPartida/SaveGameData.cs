@@ -21,8 +21,12 @@ public static class SaveGameData
         }
         catch (System.Exception e)
         {
-            Debug.LogError("Error al guardar la partida: " + e.Message);
+            Debug.LogError(e.ToString());
         }
+
+
+        Debug.Log("GUARDANDO EN: " + dataPath);
+        Debug.Log("Antes de guardar existe: " + File.Exists(dataPath));
     }
 
     public static GameData LoadGameData()

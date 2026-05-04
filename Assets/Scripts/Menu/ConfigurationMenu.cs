@@ -28,6 +28,7 @@ public class ConfigurationMenu : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("persistentDataPath: " + Application.persistentDataPath);
         panel.SetActive(false);
 
         // Cargar valores guardados
@@ -40,6 +41,7 @@ public class ConfigurationMenu : MonoBehaviour
         sliderMusica.onValueChanged.AddListener(CambiarVolumenMusica);
         sliderEfectos.onValueChanged.AddListener(CambiarVolumenEfectos);
         hardModeToggle.onValueChanged.AddListener(OnHardModeToggleChanged);
+
     }
 
     public void AbrirMenu()
@@ -96,7 +98,7 @@ public class ConfigurationMenu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("volMusica", valor);
 
-        // Aqu� debes referenciar tu AudioSource de m�sica
+        // Aqu�í hay que referenciar el AudioSource de música
         // ejemplo:
         // musicaSource.volume = valor;
     }
