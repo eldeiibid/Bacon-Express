@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 
@@ -11,7 +12,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject slotPrefab;
     public GameObject UI;
 
-    // Elementos del menú de opciones
+    // Elementos del menï¿½ de opciones
     public GameObject contextMenu;
     public Button useButton;
     public Button combineButton;
@@ -39,7 +40,7 @@ public class InventoryUI : MonoBehaviour
     void OnEnable()
     {
         Inventory.Instance.OnInventoryChanged += RefreshUI;
-        RefreshUI(); //esta es importante, sin esta linea no aparecía el inventario después de comprar. Puede parecer redundante pero si no no funciona.
+        RefreshUI(); //esta es importante, sin esta linea no aparecï¿½a el inventario despuï¿½s de comprar. Puede parecer redundante pero si no no funciona.
     }
 
     void OnDisable()
@@ -57,7 +58,7 @@ public class InventoryUI : MonoBehaviour
     {
         if (contextMenu.activeSelf && Input.GetMouseButtonDown(0))
         {
-            // Si el click NO está sobre el menú lo cerramos, porque si no no hay otra forma de quitarlo y se queda en pantalla
+            // Si el click NO estï¿½ sobre el menï¿½ lo cerramos, porque si no no hay otra forma de quitarlo y se queda en pantalla
             if (!IsPointerOverUI(contextMenu))
             {
                 CloseContextMenu();
@@ -90,7 +91,7 @@ public class InventoryUI : MonoBehaviour
         // Si queremos combinar:
         if (action.currentAction == ActionType.Combine)
         {
-            // Aquí evitamos combinar el mismo objeto
+            // Aquï¿½ evitamos combinar el mismo objeto
             if (action.selectedItem != item)
             {
                 bool success = TryCombine(action.selectedItem, item);
@@ -102,7 +103,7 @@ public class InventoryUI : MonoBehaviour
         ShowContextMenu(item);
     }
 
-    //  Mostramos el menú de opciones
+    //  Mostramos el menï¿½ de opciones
     void ShowContextMenu(ItemData item)
     {
         contextMenu.SetActive(true);
@@ -118,19 +119,19 @@ public class InventoryUI : MonoBehaviour
         inspectButton.onClick.RemoveAllListeners();
         throwButton.onClick.RemoveAllListeners();
 
-        // Al pulsar cada botón hace una acción (ovbiamente)
+        // Al pulsar cada botï¿½n hace una acciï¿½n (ovbiamente)
         useButton.onClick.AddListener(OnUse);
         combineButton.onClick.AddListener(OnCombine);
         inspectButton.onClick.AddListener(OnInspect);
         throwButton.onClick.AddListener(OnThrow);
     }
 
-    //  Acción: Usar
+    //  Acciï¿½n: Usar
     void OnUse()
     {
         if (!selectedItem.canUse)
         {
-            FeedbackUI.Instance.Show("No se puede usar");
+            FeedbackUI.Instance.Show(LocalizationSettings.StringDatabase.GetLocalizedString("FEEDBACK.CANT_USE"));
             CloseContextMenu();
             return;
         }
@@ -139,12 +140,12 @@ public class InventoryUI : MonoBehaviour
         contextMenu.SetActive(false);
     }
 
-    //  Acción: Combinar
+    //  Acciï¿½n: Combinar
     void OnCombine()
     {
         if (!selectedItem.canCombine)
         {
-            FeedbackUI.Instance.Show("No se puede combinar");
+            FeedbackUI.Instance.Show(LocalizationSettings.StringDatabase.GetLocalizedString("FEEDBACK.CANT_COMBINE"));
             CloseContextMenu();
             return;
         }
@@ -152,7 +153,7 @@ public class InventoryUI : MonoBehaviour
         contextMenu.SetActive(false);
     }
 
-    //  Acción: Inspeccionar
+    //  Acciï¿½n: Inspeccionar
     void OnInspect()
     {
         InspectItem.Instance.Show(selectedItem);
@@ -165,7 +166,7 @@ public class InventoryUI : MonoBehaviour
         contextMenu.SetActive(false);
     }
 
-    // Cerrar menú 
+    // Cerrar menï¿½ 
     public void CloseContextMenu()
     {
         contextMenu.SetActive(false);
@@ -180,10 +181,10 @@ public class InventoryUI : MonoBehaviour
         UI.SetActive(false);
     }
 
-    // Buscamos si los objetos están uno en la lista de combinables del otro
+    // Buscamos si los objetos estï¿½n uno en la lista de combinables del otro
     public bool TryCombine(ItemData itemA, ItemData itemB)
     {
-        // Buscar combinación en A
+        // Buscar combinaciï¿½n en A
         foreach (var combo in itemA.combinations)
         {
             if (combo.otherItem == itemB)
@@ -193,7 +194,7 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-        // Buscar combinación en B 
+        // Buscar combinaciï¿½n en B 
         foreach (var combo in itemB.combinations)
         {
             if (combo.otherItem == itemA)
@@ -205,7 +206,7 @@ public class InventoryUI : MonoBehaviour
 
         return false;
     }
-    // Si lo eestán, quitamos los dos items que hemos combinado y ponemos el nuevo
+    // Si lo eestï¿½n, quitamos los dos items que hemos combinado y ponemos el nuevo
     void CombineItems(ItemData itemA, ItemData itemB, ItemData result)
     {
         Inventory.Instance.RemoveItem(itemA);
@@ -215,7 +216,7 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-    // Estoy hay que hacerlo para que, si ya has pinchado en un item y te ha salido el menú de 3 opciones, al pinchar fuera se quite.
+    // Estoy hay que hacerlo para que, si ya has pinchado en un item y te ha salido el menï¿½ de 3 opciones, al pinchar fuera se quite.
     // POrque lo dicho, sin esto, se queda en pantalla hasta que hagas alguna de las 3 opciones, pero hay veces que puede que no quieras hacer ninguna 
     // o que no te de tiempo porque te viene un bicho.
     bool IsPointerOverUI(GameObject target)

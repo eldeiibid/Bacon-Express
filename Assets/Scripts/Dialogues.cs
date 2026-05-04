@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
 
 
-// Este script maneja todo el sistema de diálogos, es una movida y ha sido un lío horrible escribirlo.
-// Sospecho que hay ahora mismo cosas que están duplicadas y que son redundantes, pero me da miedo ponerme a tocar porque no lo quiero romper.
-// También hay algunas funcionalidades que debería haber puesto en un script aparte, pero todo eso ya lo haré. De momento con que funcione me siento satisfecha.
-// Lo de los nodos es una movida que flipas, tanto aquí en el script como en el editor de Unity. Y aunque le he puesto cabeceras a lso apartados se ven cortadas, pero no sé como ponerlas bien.
+// Este script maneja todo el sistema de diï¿½logos, es una movida y ha sido un lï¿½o horrible escribirlo.
+// Sospecho que hay ahora mismo cosas que estï¿½n duplicadas y que son redundantes, pero me da miedo ponerme a tocar porque no lo quiero romper.
+// Tambiï¿½n hay algunas funcionalidades que deberï¿½a haber puesto en un script aparte, pero todo eso ya lo harï¿½. De momento con que funcione me siento satisfecha.
+// Lo de los nodos es una movida que flipas, tanto aquï¿½ en el script como en el editor de Unity. Y aunque le he puesto cabeceras a lso apartados se ven cortadas, pero no sï¿½ como ponerlas bien.
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -22,10 +23,10 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Button[] optionButtons;
     [SerializeField] private TMP_Text[] optionTexts;
 
-    [Header("Configuración")]
+    [Header("ConfiguraciÃ³n")]
     [SerializeField] private float typingTime = 0.05f;
 
-    [Header("Diálogo")]
+    [Header("DiÃ¡logo")]
     [SerializeField] private DialogueNode[] nodes;
 
     public int escena;
@@ -33,11 +34,10 @@ public class DialogueSystem : MonoBehaviour
     private int currentNodeIndex;
     private bool dialogueStarted;
     private bool isTyping;
-
     private HashSet<int> visitedNodes = new HashSet<int>();
 
 
-    //Aquí inicia el diálogo, al pulsar el botón "Hablar". Se cierra el inventario y se habre una caja de texto.
+    //Aquï¿½ inicia el diï¿½logo, al pulsar el botï¿½n "Hablar". Se cierra el inventario y se habre una caja de texto.
     public void StartDialogue()
     {
         InventoryUI.Instance.CloseUI();
@@ -77,7 +77,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    // si el nodo en el que estamos va seguido de opciones, las mostramos. Depende de la opción que elijamos pues compras un Item u otro (obviamente)
+    // si el nodo en el que estamos va seguido de opciones, las mostramos. Depende de la opciï¿½n que elijamos pues compras un Item u otro (obviamente)
     private void ShowOptions()
     {
         DialogueOption[] options = nodes[currentNodeIndex].options;
@@ -93,7 +93,8 @@ public class DialogueSystem : MonoBehaviour
                 // ESTO ES PARA LOS ITEMS QUE SE PUEDEN COMPRAR
                 if (option.itemToBuy != null)
                 {
-                    optionTexts[i].text = option.itemToBuy.itemName + " - " + option.itemToBuy.cost + "$";
+                    string itemToBuyName = LocalizationSettings.StringDatabase.GetLocalizedString($"ITEM.{option.itemToBuy.itemName}.NAME");
+                    optionTexts[i].text = itemToBuyName + " - " + option.itemToBuy.cost + "$";
                 }
                 else
                 {
@@ -120,12 +121,12 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    //seleccionamos una opción y se muestra el siguiente texto, que se elije en el editor de Unity, no aquí, claro.
+    //seleccionamos una opciï¿½n y se muestra el siguiente texto, que se elije en el editor de Unity, no aquï¿½, claro.
     private void SelectOption(int optionIndex)
     {
         DialogueOption selected = nodes[currentNodeIndex].options[optionIndex];
 
-        // Si es opción de compra (porque hay una que no lo es, la de "No me interesa nada") pues hay que mirar las monedillas que tienes y ver si puedes.
+        // Si es opciï¿½n de compra (porque hay una que no lo es, la de "No me interesa nada") pues hay que mirar las monedillas que tienes y ver si puedes.
         if (selected.itemToBuy != null)
         {
             int cost = selected.itemToBuy.cost;
@@ -146,19 +147,19 @@ public class DialogueSystem : MonoBehaviour
                 return;
             }
 
-            // 3. Compra válida
+            // 3. Compra vï¿½lida
             Inventory.Instance.AddItem(selected.itemToBuy);
             Debug.Log("Comprado: " + selected.itemToBuy.itemName);
         }
 
-        // Fin de diálogo
+        // Fin de diï¿½logo
         if (selected.endsDialogue)
         {
             EndDialogue();
             return;
         }
 
-        // Avanzar diálogo
+        // Avanzar diï¿½logo
         currentNodeIndex = selected.nextNodeIndex;
 
         HideOptions();
@@ -183,7 +184,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    // esto es para hacer ramificaciones en los diálogos SI Y SOLO SI ya se han visto nodos específicos.
+    // esto es para hacer ramificaciones en los diï¿½logos SI Y SOLO SI ya se han visto nodos especï¿½ficos.
     private bool IsOptionUnlocked(DialogueOption option)
     {
         switch (option.condition)
@@ -199,7 +200,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    // acaba el diálogo y se vuelven a mostrar los botones "Hablar" e "Irse", la caja de dialogo se cierra y vuelve a aparecer el inventario
+    // acaba el diï¿½logo y se vuelven a mostrar los botones "Hablar" e "Irse", la caja de dialogo se cierra y vuelve a aparecer el inventario
     private void EndDialogue()
     {
         dialogueStarted = false;
@@ -210,14 +211,14 @@ public class DialogueSystem : MonoBehaviour
         InventoryUI.Instance.ShowUI();
     }
 
-    // Con el update, al hacer click izquierdo se avanza el diálogo.
+    // Con el update, al hacer click izquierdo se avanza el diï¿½logo.
     private void Update()
     {
         if (!dialogueStarted) return;
 
         if (Input.GetButtonDown("Fire1"))
         {
-            // Si está escribiendo -> completa el texto
+            // Si estï¿½ escribiendo -> completa el texto
             if (isTyping)
             {
                 StopAllCoroutines();
@@ -230,7 +231,7 @@ public class DialogueSystem : MonoBehaviour
                 return;
             }
 
-            // Si NO hay opciones y el texto ya está completo -> avanza
+            // Si NO hay opciones y el texto ya estï¿½ completo -> avanza
             if (!HasAvailableOptions())
             {
                 int next = nodes[currentNodeIndex].nextNodeIndex;
@@ -269,7 +270,7 @@ public class DialogueSystem : MonoBehaviour
         return false;
     }
 
-    // Este método estaba para pasar automáticamente al nodo siguiente, pero al final no se usa. Lo dejo por si queremos cambiarlo o por si luego resulta útil para otra cosa.
+    // Este mï¿½todo estaba para pasar automï¿½ticamente al nodo siguiente, pero al final no se usa. Lo dejo por si queremos cambiarlo o por si luego resulta ï¿½til para otra cosa.
     private void GoToNextNode()
     {
         int next = nodes[currentNodeIndex].nextNodeIndex;
@@ -285,7 +286,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    // Para cambiar de escena al pulsar "Irse", esto es una de las cosas que digo que pondré en otro script porque aquí no pinta nada.
+    // Para cambiar de escena al pulsar "Irse", esto es una de las cosas que digo que pondrï¿½ en otro script porque aquï¿½ no pinta nada.
     public void ChangeScene()
     {
         SceneManager.LoadScene(escena);
@@ -294,7 +295,7 @@ public class DialogueSystem : MonoBehaviour
 }
 
 
-// Vale, esto son las calses Nodo y Opción de los diálogos. 
+// Vale, esto son las calses Nodo y Opciï¿½n de los diï¿½logos. 
 [System.Serializable]
 public class DialogueNode
 {
@@ -303,7 +304,7 @@ public class DialogueNode
 
     public DialogueOption[] options;
 
-    [Header("Siguiente nodo automático")]
+    [Header("Siguiente nodo automÃ¡tico")]
     public int nextNodeIndex = -1;
 }
 
@@ -317,7 +318,7 @@ public class DialogueOption
     public ConditionType condition;
     public int requiredNode;
 
-    [Header("Finalizar diálogo")]
+    [Header("Finalizar diÃ¡logo")]
     public bool endsDialogue;
 
     [Header("Compra")]
@@ -330,7 +331,7 @@ public class DialogueOption
     public int noSpaceNodeIndex = -1;
 }
 
-// Esto es para lo de las ramificaciones cuando ya has pasado por nodos específicos,
+// Esto es para lo de las ramificaciones cuando ya has pasado por nodos especï¿½ficos,
 public enum ConditionType
 {
     None,

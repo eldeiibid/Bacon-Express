@@ -9,10 +9,10 @@ public class ConfigurationMenu : MonoBehaviour
     public Slider sliderGeneral;
     public Slider sliderMusica;
     public Slider sliderEfectos;
-    [SerializeField] Toggle hardModeToggle;
-    [SerializeField] MultiplyAI multiplyAI;
+    //[SerializeField] Toggle hardModeToggle;
+    //[SerializeField] MultiplyAI multiplyAI; Función quitada.
 
-    public GameObject inventoryUI;
+    //public GameObject inventoryUI;
     public const int HardModeBonus = 2;
 
     void Start()
@@ -28,20 +28,20 @@ public class ConfigurationMenu : MonoBehaviour
         sliderGeneral.onValueChanged.AddListener(CambiarVolumenGeneral);
         sliderMusica.onValueChanged.AddListener(CambiarVolumenMusica);
         sliderEfectos.onValueChanged.AddListener(CambiarVolumenEfectos);
-        hardModeToggle.onValueChanged.AddListener(OnHardModeToggleChanged);
+
     }
 
     public void AbrirMenu()
     {
         panel.SetActive(true);
-        inventoryUI.SetActive(false); // ocultamos el inventario
+        //inventoryUI.SetActive(false); // ocultamos el inventario: NO!! Simplemente hay que ponerlo en un sort order mayor.
         Time.timeScale = 0; // Se supone que esto pausa el jeugo al abrir el men�
     }
 
     public void CerrarMenu()
     {
         panel.SetActive(false);
-        inventoryUI.SetActive(true); // volvemos a mostrarlo
+        //inventoryUI.SetActive(true); // volvemos a mostrarlo
         Time.timeScale = 1; // despausamos el juego
     }
 
@@ -72,18 +72,5 @@ public class ConfigurationMenu : MonoBehaviour
 
         // Igual que arriba, para efectos
         // efectosSource.volume = valor;
-    }
-    private void OnHardModeToggleChanged(bool isOn)
-    {
-        if (isOn)
-        {
-            multiplyAI.aiValue = Mathf.Min(multiplyAI.aiValue + HardModeBonus, 10);
-            Debug.Log($"[HardMode] Modo difícil activado — aiValue: {multiplyAI.aiValue}");
-        }
-        else
-        {
-            multiplyAI.aiValue = Mathf.Max(multiplyAI.aiValue - HardModeBonus, 1);
-            Debug.Log($"[HardMode] Modo difícil desactivado — aiValue: {multiplyAI.aiValue}");
-        }
     }
 }

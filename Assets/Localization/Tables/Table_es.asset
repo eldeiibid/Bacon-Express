@@ -1,0 +1,267 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Table_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 13f0940b86188414c905841ee315d4bc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 38375896682496
+    m_Localized: Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Configuraci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Nueva Partida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Volumen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Sonido
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "MODO DIF\xCDCIL!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: CERRAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "Al Men\xFA Principal"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Balas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Martillo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Cinta Adhesiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Metal Brillante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Martillo de Ingeniero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Martillo Plateado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Reparar Ventana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Un martillo simple y rudimentario. Al usarlo se inhibir\xE1 a un
+      monstruo aleatorio durante diez segundos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Un rollo de cinta adhesiva de buena calidad. Puede ser util para
+      reparar el cristal de la cabina, si se ha quebrado.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: "Una pieza de metal bastante brillante y resistente. Aguantar\xE1
+      un rato tapiando la puerta de la cabina."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: Un martillo bastante elaborado y brillante. Es tan bonito que en
+      lugar de romper, repara. Ventanas, por ejemplo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Echa un vistazo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: Un placer hacer negocios contigo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: "\xBFMe tomas el pelo? Si no tienes suficiente dinero no me hagas
+      perder el tiempo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: No parece que tengas suficiente espacio para guardar esto, colega.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: Hasta otra, amigo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: "Este martillo es algo simple, pero seguro que puede serte \xFAtil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: Esa cinta es bastante resistente, seguro que puedes arreglar algo
+      con ella.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: "Es un trozo de metal que encontr\xE9 por ah\xED, \xBFa que es bonito?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: Me lo quedo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "\xBFQu\xE9 m\xE1s tienes?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Balas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Martillo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: Cinta Adhesiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Metal Brillante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: Martillo de Ingeniero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: Martillo Plateado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: Reparar Ventana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: "Buenas noches, amigo. \xBFNecesitas surtirte de materiales? Tengo
+      objetos que podr\xEDan serte \xFAtiles... siempre y cuando tengas la suficiente
+      divisa, claro. \xBFC\xF3mo? \xBFQue los precios te parecen inflados? \xBFTu
+      has visto c\xF3mo est\xE1n las cosas ah\xED fuera? No encontrar\xE1s a nadie
+      m\xE1s en una larga distancia, as\xED que son lentejas. O las tomas, o te vas
+      por donde has venido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: Hablar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: Irse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: No me interesa nada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: Usar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Localized: Inspeccionar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: Combinar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: Tirar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "Un pu\xF1ado de balas de plomo. Con su uso, los monstruos que se
+      encuentren en las v\xEDas desaparecer\xE1n inmediatamente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: "Un martillo de aspecto profesional. Al usarlo, un monstruo aleatorio
+      no se acercar\xE1 durante al menos treinta segundos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: "Un kit de reparaci\xF3n de ventanas. \xDAsalo en una para repararla
+      al m\xE1ximo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: Balas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73
+    m_Localized: "Un montoncito de balas de plata. Al usarlas, los monstruos que
+      se encuentren en las v\xEDas desaparecer\xE1n inmediatamente y no se acercar\xE1n
+      durante, al menos, quince segundos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74
+    m_Localized: Balas Plateadas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75
+    m_Localized: No se puede usar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76
+    m_Localized: No se puede combinar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77
+    m_Localized: Inventario lleno
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// IMPORTANTÍSIMO SCRIPPPTTT. Es literalmente crear en Unity unos objetos Items que te guardas como assets y llevan todos los atributos que van a tener nuestros items
+// IMPORTANTï¿½SIMO SCRIPPPTTT. Es literalmente crear en Unity unos objetos Items que te guardas como assets y llevan todos los atributos que van a tener nuestros items
 // (acabo de descubrir que esto se puede hacer y me tiene dando volteretas)
 
 [CreateAssetMenu(menuName = "Inventory/Item")]
+
 public class ItemData : ScriptableObject
 {
     public string itemName;

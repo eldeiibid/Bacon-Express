@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    [Header("Configuración")]
+    [Header("ConfiguraciÃ³n")]
     public ItemData requiredItem;
     public bool consumesItem = false;
 
@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
     {
         var action = ActionManager.Instance;
 
-        // Si no hay acción activa -> interacción básica
+        // Si no hay acciÃ³n activa -> interacciÃ³n bÃ¡sica
         if (action.currentAction == ActionType.None)
         {
             DefaultInteraction();
@@ -39,9 +39,9 @@ public class Interactable : MonoBehaviour
 
         if (action.selectedItem == requiredItem)
         {
-            Debug.Log("Acción correcta!");
+            Debug.Log("AcciÃ³n correcta!");
 
-            // AQUÍ está la clave
+            // AQUï¿½ estï¿½ la clave
             onSuccess?.Invoke();
 
             if (consumesItem)
@@ -53,13 +53,13 @@ public class Interactable : MonoBehaviour
         }
         else
         {
-            Debug.Log("No funciona aquí");
+            Debug.Log("No funciona aquÃ­");
             onFail?.Invoke();
         }
     }
 
     void DefaultInteraction()
     {
-        Debug.Log("Interacción básica con " + gameObject.name);
+        Debug.Log("InteracciÃ³n bÃ¡sica con " + gameObject.name);
     }
 }

@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class MultiplyAI : MonoBehaviour
 {
-    public enum EnemyState { Idle, OnDoor }
+    public enum EnemyState { Disabled, Idle, OnDoor }
 
     [Header("AI Settings")]
-    [Range(1, 10)]
+    [Range(0, 10)]
     public int aiValue = 1;
 
     [Header("External References")]
@@ -17,17 +17,27 @@ public class MultiplyAI : MonoBehaviour
     [SerializeField] Image multiplyImage;
 
     private EnemyState currentState;
+    [Header("Debug")]
     public float timer;
     private int lastDistanceThreshold = 0;
-    private const int DISTANCE_REQUIRED_TO_INCREASE_AI = 20;  //Valor recomendado: 500m
+    private const int DISTANCE_REQUIRED_TO_INCREASE_AI = 20;
 
     private void Start()
     {
-        ChangeState(EnemyState.Idle);
+        if (aiValue == 0)
+        {
+            ChangeState(EnemyState.Disabled);
+        }
+        else
+        {
+            ChangeState(EnemyState.Idle);
+        }
     }
 
     private void Update()
     {
+        if (currentState == EnemyState.Disabled) return;
+
         CheckDistanceMilestone();
         timer -= Time.deltaTime;
 
@@ -41,8 +51,8 @@ public class MultiplyAI : MonoBehaviour
                 UpdateOnDoor();
                 break;
         }
-        
     }
+
 
     private void UpdateIdle()
     {
@@ -52,28 +62,22 @@ public class MultiplyAI : MonoBehaviour
         }
     }
 
+
     private void UpdateOnDoor()
     {
-        //Cuando acaba el timer
         if (timer <= 0f)
         {
-            //Si se mantiente cerrada la puerta
-            if (doorController.isClosed)
-            {
-                Debug.Log("[Multiply] Puerta cerrada — el enemigo retrocede.");
-                ChangeState(EnemyState.Idle);
-                return;
-            }
+            healthSystem.decreaseHealth();
+            Debug.Log("[Multiply] ¡El enemigo daña al jugador!");
+            jumpscareController.TriggerJumpscare();
+            ChangeState(EnemyState.Idle);
+        }
 
-            else
-            {
-                healthSystem.decreaseHealth();
-                Debug.Log("[Multiply] ¡El enemigo daña al jugador!");
-                //Llamar a la funcion de jumpsacare.
-                jumpscareController.TriggerJumpscare(); 
-                ChangeState(EnemyState.Idle);
-            }
-
+        if (doorController.isClosed)
+        {
+            Debug.Log("[Multiply] Puerta cerrada — el enemigo retrocede.");
+            ChangeState(EnemyState.Idle);
+            return;
         }
     }
 
@@ -86,25 +90,25 @@ public class MultiplyAI : MonoBehaviour
         if (currentThreshold > lastDistanceThreshold)
         {
             lastDistanceThreshold = currentThreshold;
-            aiValue = Mathf.Min(aiValue + 1, 10);
 
+            aiValue = Mathf.Min(aiValue + 1, 10);
             Debug.Log($"[Multiply] ¡Nuevo umbral de distancia! ({currentDistance}m) — aiValue sube a: {aiValue}");
+            
         }
     }
 
+  
     private void ChangeState(EnemyState newState)
     {
         currentState = newState;
 
         if (newState == EnemyState.OnDoor)
         {
-            //Muestra al bicho por pantalla.
             multiplyImage.enabled = true;
         }
-        else if (newState == EnemyState.Idle)
+        else
         {
-            //Ocultar al bicho.
-            multiplyImage.enabled = false;   
+            multiplyImage.enabled = false;
         }
 
         ResetTimer(newState);
@@ -115,13 +119,17 @@ public class MultiplyAI : MonoBehaviour
     {
         if (state == EnemyState.OnDoor)
         {
-            timer = 3f; //Valor recomendado, 5 segundos. 
+            timer = 3f;
+        }
+        else if (state == EnemyState.Idle)
+        {
+            float random = Random.Range(20f, 40f);
+            timer = random - aiValue;
         }
         else
         {
-            //Valores recomendados para partida normal, entre 30 y 60 segundos.
-            float random = Random.Range(20f, 40f);
-            timer = random - aiValue;
+            // Si esta Disabled, el timer no importa, se deja en 0
+            timer = 0f;
         }
     }
 }

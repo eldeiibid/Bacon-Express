@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 409508624}
   - component: {fileID: 409508626}
   - component: {fileID: 409508625}
+  - component: {fileID: 409508627}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -597,6 +598,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409508623}
   m_CullTransparentMesh: 1
+--- !u!114 &409508627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409508623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+    m_TableEntryReference:
+      m_KeyId: 62
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 409508625}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &489490405
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +770,7 @@ GameObject:
   - component: {fileID: 508134772}
   - component: {fileID: 508134774}
   - component: {fileID: 508134773}
+  - component: {fileID: 508134775}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -852,6 +894,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508134771}
   m_CullTransparentMesh: 1
+--- !u!114 &508134775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508134771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+    m_TableEntryReference:
+      m_KeyId: 61
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 508134773}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &508997946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1635,7 @@ GameObject:
   - component: {fileID: 1377416373}
   - component: {fileID: 1377416372}
   - component: {fileID: 1377416376}
+  - component: {fileID: 1377416377}
   m_Layer: 5
   m_Name: DIALOGE UI
   m_TagString: Untagged
@@ -1789,6 +1872,299 @@ MonoBehaviour:
     options: []
     nextNodeIndex: -1
   escena: 3
+--- !u!114 &1377416377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377416371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 4125053203537461248
+  references:
+    version: 2
+    RefIds:
+    - rid: 4125053203537461248
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 1377416376}
+        m_TrackedProperties:
+          items:
+          - rid: 4125053203537461249
+          - rid: 4125053203537461250
+          - rid: 4125053203537461251
+          - rid: 4125053203537461252
+          - rid: 4125053203537461253
+          - rid: 4125053203537461254
+          - rid: 4125053203537461255
+          - rid: 4125053203537461256
+          - rid: 4125053203537461257
+          - rid: 4125053203537461258
+          - rid: 4125053203537461259
+          - rid: 4125053203537461261
+          - rid: 4125053203537461262
+          - rid: 4125053203537461263
+          - rid: 4125053203537461264
+          - rid: 4125053203537461265
+          - rid: 4125053203537461266
+          - rid: 4125053203537461267
+          - rid: 4125053203537461268
+        m_UpdateType: 1
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 4125053203537461249
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 26
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[0].dialogueText
+    - rid: 4125053203537461250
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 29
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[1].dialogueText
+    - rid: 4125053203537461251
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 56
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[1].options.Array.data[0].text
+    - rid: 4125053203537461252
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 55
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[1].options.Array.data[1].text
+    - rid: 4125053203537461253
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 57
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[1].options.Array.data[2].text
+    - rid: 4125053203537461254
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 51
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[1].options.Array.data[3].text
+    - rid: 4125053203537461255
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 46
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[2].dialogueText
+    - rid: 4125053203537461256
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 52
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[2].options.Array.data[0].text
+    - rid: 4125053203537461257
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 53
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[2].options.Array.data[1].text
+    - rid: 4125053203537461258
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 45
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[3].dialogueText
+    - rid: 4125053203537461259
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 52
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[3].options.Array.data[0].text
+    - rid: 4125053203537461261
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 53
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[3].options.Array.data[1].text
+    - rid: 4125053203537461262
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 47
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[4].dialogueText
+    - rid: 4125053203537461263
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 52
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[4].options.Array.data[0].text
+    - rid: 4125053203537461264
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 53
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[4].options.Array.data[1].text
+    - rid: 4125053203537461265
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 41
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[5].dialogueText
+    - rid: 4125053203537461266
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 32
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[6].dialogueText
+    - rid: 4125053203537461267
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 35
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[7].dialogueText
+    - rid: 4125053203537461268
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+          m_TableEntryReference:
+            m_KeyId: 38
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: nodes.Array.data[8].dialogueText
 --- !u!1 &1383634781
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599138bdaa611c04eb2362ee6932d472, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  itemName: Martillo
+  itemName: HAMMER
   icon: {fileID: 21300000, guid: 8e3d2ef9333a2be4caaf24d229f1124a, type: 3}
   canUse: 1
   canCombine: 1
   cost: 5
-  description: "Un martillo simple y rudimentario. Al usarlo se inhibir\xE1 a un
-    monstruo aleatorio durante diez segundos."
+  description: "EL NOMBRE DE LOS ITEMS TIENEN Q ESTAR EN MAYUS. Y SEPARADOS POR \"_\"
+    PARA Q FUNCIONE LA LOCALIZACI\xD3N"
   combinations:
   - otherItem: {fileID: 11400000, guid: 6f5639d8342b9564ea33b4f787095acf, type: 2}
     result: {fileID: 11400000, guid: f17a6798eb512bf43a0302b15af23e16, type: 2}

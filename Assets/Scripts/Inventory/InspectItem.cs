@@ -1,10 +1,11 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 
-// Gestinamos el tema de inspeccionar los items, sacando un panelillo con el nombre, la foto y una descripci�n que me pienso inventar en todos y cada uno de ellos :3
+// Gestinamos el tema de inspeccionar los items, sacando un panelillo con el nombre, la foto y una descripci�n que me pienso inventar en todos y cada uno de ellos :3
 
 public class InspectItem : MonoBehaviour
 {
@@ -37,8 +38,10 @@ public class InspectItem : MonoBehaviour
     {
         panel.SetActive(true);
 
-        itemName.text = item.itemName;
-        itemDescription.text = item.description;
+        //No preguntes, sólo gózalo.
+        //Por cierto, con este sistema ya es inutil poner la descripcion en el propio objeto, ya que está en el CSV
+        itemName.text = LocalizationSettings.StringDatabase.GetLocalizedString($"ITEM.{item.itemName}.NAME");
+        itemDescription.text = LocalizationSettings.StringDatabase.GetLocalizedString($"ITEM.{item.itemName}.DESC");
         itemImage.sprite = item.icon;
     }
 

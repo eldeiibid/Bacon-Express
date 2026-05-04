@@ -1,0 +1,79 @@
+Key,Id,English(en),Spanish(es)
+UI.PLAY,0,Play,Jugar
+UI.QUIT,1,Quit,Salir
+UI.OPTION,2,Settings,Configuración
+UI.NEW_GAME,3,New Game,Nueva Partida
+UI.CONTINUE,4,Continue,Continuar
+OPTION.VOLUME,5,Volume,Volumen
+OPTION.BGM,6,BGM,Música
+OPTION.SFX,7,SFX,Sonido
+OPTION.LANGUAGE,8,Language,Idioma
+OPTION.HARD_MODE,9,HARD MODE!,MODO DIFÍCIL!
+OPTION.CLOSE,10,CLOSE,CERRAR
+OPTION.TO_MAIN_MENU,11,Go Back To Menu,Al Menú Principal
+ITEM.BULLETS.NAME,12,Bullets,Balas
+ITEM.HAMMER.NAME,13,Hammer,Martillo
+ITEM.DUCT_TAPE.NAME,14,Duct Tape,Cinta Adhesiva
+ITEM.SHINY_METAL.NAME,15,Shiny Metal,Metal Brillante
+ITEM.ENGINEER_HAMMER.NAME,16,Engineer Hammer,Martillo de Ingeniero
+ITEM.SILVER_HAMMER.NAME,17,Silver Hammer,Martillo Plateado
+ITEM.WINDOW_REPAIR.NAME,18,Window Repair,Reparar Ventana
+ITEM.BULLETS.DESC,19,"A handful of lead bullets. With their use, any monsters found on the tracks will disappear instantly.","Un puñado de balas de plomo. Con su uso, los monstruos que se encuentren en las vías desaparecerán inmediatamente."
+ITEM.HAMMER.DESC,20,"A simple, rudimentary hammer. Using it will inhibit a random monster for ten seconds.",Un martillo simple y rudimentario. Al usarlo se inhibirá a un monstruo aleatorio durante diez segundos.
+ITEM.DUCT_TAPE.DESC,21,A roll of good quality adhesive tape. It can be useful for repairing the cabin glass if it has cracked.,"Un rollo de cinta adhesiva de buena calidad. Puede ser util para reparar el cristal de la cabina, si se ha quebrado."
+ITEM.SHINY_METAL.DESC,22,A fairly shiny and sturdy piece of metal. It will hold up for a while blocking the cabin door.,Una pieza de metal bastante brillante y resistente. Aguantará un rato tapiando la puerta de la cabina.
+ITEM.ENGINEER_HAMMER.DESC,23,"A professional-looking hammer. When used, a random monster will not approach for at least thirty seconds.","Un martillo de aspecto profesional. Al usarlo, un monstruo aleatorio no se acercará durante al menos treinta segundos."
+ITEM.SILVER_HAMMER.DESC,24,"A rather elaborate and shiny hammer. It's so beautiful that instead of breaking things, it repairs them. Windows, for example.","Un martillo bastante elaborado y brillante. Es tan bonito que en lugar de romper, repara. Ventanas, por ejemplo."
+ITEM.WINDOW_REPAIR.DESC,25,A window repair kit. Use it on one window to repair it completely.,Un kit de reparación de ventanas. Úsalo en una para repararla al máximo.
+DIAL.NPC.GREET_1,26,"Good evening, friend. Need to stock up on supplies? I have some items that might be useful to you... provided you have enough currency, of course. What? You think the prices are inflated? Have you seen how things are out there? You won't find anyone else for a long distance. So take this offer or get lost!","Buenas noches, amigo. ¿Necesitas surtirte de materiales? Tengo objetos que podrían serte útiles... siempre y cuando tengas la suficiente divisa, claro. ¿Cómo? ¿Que los precios te parecen inflados? ¿Tu has visto cómo están las cosas ahí fuera? No encontrarás a nadie más en una larga distancia, así que son lentejas. O las tomas, o te vas por donde has venido."
+DIAL.NPC.GREET_2,27,,
+DIAL.NPC.GREET_3,28,,
+DIAL.NPC.SHOP_1,29,Take a look.,Echa un vistazo.
+DIAL.NPC.SHOP_2,30,,
+DIAL.NPC.SHOP_3,31,,
+DIAL.NPC.SOLD_ITEM_1,32,It's a pleasure doing business with you.,Un placer hacer negocios contigo.
+DIAL.NPC.SOLD_ITEM_2,33,,
+DIAL.NPC.SOLD_ITEM_3,34,,
+DIAL.NPC.NO_MONEY_1,35,"Are you kidding me? If you don't have enough money, don't waste my time.",¿Me tomas el pelo? Si no tienes suficiente dinero no me hagas perder el tiempo.
+DIAL.NPC.NO_MONEY_2,36,,
+DIAL.NPC.NO_MONEY_3,37,,
+DIAL.NPC.NO_SPACE_1,38,"It doesn't look like you have enough space to store this, mate.","No parece que tengas suficiente espacio para guardar esto, colega."
+DIAL.NPC.NO_SPACE_2,39,,
+DIAL.NPC.NO_SPACE_3,40,,
+DIAL.NPC.BYE_1,41,"See ya 'round, pal.","Hasta otra, amigo."
+DIAL.NPC.BYE_2,42,,
+DIAL.NPC.BYE_3,43,,
+DIAL.NPC.BUY_BULLETS,44,,Balas
+DIAL.NPC.BUY_HAMMER,45,"This hammer is simple, but it might come in handy.","Este martillo es algo simple, pero seguro que puede serte útil."
+DIAL.NPC.BUY_DUCT_TAPE,46,"That tape is pretty strong, I'm sure you can fix something with it.","Esa cinta es bastante resistente, seguro que puedes arreglar algo con ella."
+DIAL.NPC.BUY_SHINY_METAL,47,"It's a piece of metal I found lying around, isn't it pretty?","Es un trozo de metal que encontré por ahí, ¿a que es bonito?"
+DIAL.NPC.BUY_ENGINEER_HAMMER,48,,
+DIAL.NPC.BUY_SILVER_HAMMER,49,,
+DIAL.NPC.BUY_WINDOW_REPAIR,50,,
+DIAL.CHOOSE.NOT_INTERESTED,51,I'm not interested,
+DIAL.CHOOSE.BUY_ITEM,52,I'll keep it,Me lo quedo
+DIAL.CHOOSE.NOT_BUY_ITEM,53,What else you got?,¿Qué más tienes?
+DIAL.CHOOSE.BULLETS,54,Bullets,Balas
+DIAL.CHOOSE.HAMMER,55,Hammer,Martillo
+DIAL.CHOOSE.DUCT_TAPE,56,Duct Tape,Cinta Adhesiva
+DIAL.CHOOSE.SHINY_METAL,57,Shiny Metal,Metal Brillante
+DIAL.CHOOSE.ENGINEER_HAMMER,58,Engineer Hammer,Martillo de Ingeniero
+DIAL.CHOOSE.SILVER_HAMMER,59,Silver Hammer,Martillo Plateado
+DIAL.CHOOSE.WINDOW_REPAIR,60,Window Repair,Reparar Ventana
+DIAL.TALK,61,Talk,Hablar
+DIAL.LEAVE,62,Leave,Irse
+INV.USE,63,Use,Usar
+INV.INSPECT,64,Inspect,Inspeccionar
+INV.COMBINE,65,Combine,Combinar
+INV.TOSS,66,Toss,Tirar
+TUTORIAL.TEXT_1,67,,
+TUTORIAL.TEXT_2,68,,
+TUTORIAL.TEXT_3,69,,
+TUTORIAL.TEXT_4,70,,
+TUTORIAL.TEXT_5,71,,
+CREDITS.LABEL,72,,
+ITEM.SILVER_BULLETS.DESC,73,"A small pile of silver bullets. When used, any monsters on the tracks will disappear immediately and won't approach for at least fifteen seconds.","Un montoncito de balas de plata. Al usarlas, los monstruos que se encuentren en las vías desaparecerán inmediatamente y no se acercarán durante, al menos, quince segundos."
+ITEM.SILVER_BULLETS.NAME,74,Silver Bullets,Balas Plateadas
+FEEDBACK.CANT_USE,75,Can't be used,No se puede usar
+FEEDBACK.CANT_COMBINE,76,Can't be combined,No se puede combinar
+FEEDBACK.FULL_INVENTORY,77,Inventory is full,Inventario lleno

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599138bdaa611c04eb2362ee6932d472, type: 3}
   m_Name: Silver Hammer
   m_EditorClassIdentifier: 
-  itemName: Martillo plateado
+  itemName: SILVER_HAMMER
   icon: {fileID: 21300000, guid: 8dc777a4f7d68f74781c1b645a8a7cac, type: 3}
   canUse: 1
   canCombine: 0
   cost: 7
-  description: Un martillo bastante elaborado y brillante. Es tan bonito que en lugar
-    de romper, repara. Ventanas, por ejemplo.
+  description: "EL NOMBRE DE LOS ITEMS TIENEN Q ESTAR EN MAYUS. Y SEPARADOS POR \"_\"
+    PARA Q FUNCIONE LA LOCALIZACI\xD3N"
   combinations: []

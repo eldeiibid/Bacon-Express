@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599138bdaa611c04eb2362ee6932d472, type: 3}
   m_Name: Shiny metal
   m_EditorClassIdentifier: 
-  itemName: Metal brillante
+  itemName: SHINY_METAL
   icon: {fileID: 21300000, guid: a77f7cbf4039423448f02e102bd071da, type: 3}
   canUse: 1
   canCombine: 1
   cost: 5
-  description: "Una pieza de metal bastante brillante y resistente. Aguantar\xE1
-    un rato tapiando la puerta de la cabina."
+  description: "EL NOMBRE DE LOS ITEMS TIENEN Q ESTAR EN MAYUS. Y SEPARADOS POR \"_\"
+    PARA Q FUNCIONE LA LOCALIZACI\xD3N"
   combinations:
   - otherItem: {fileID: 11400000, guid: a8ce7beb1edf54e4c9da44ef8c315da6, type: 2}
     result: {fileID: 11400000, guid: f17a6798eb512bf43a0302b15af23e16, type: 2}

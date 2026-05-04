@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Localization.Settings;
 
 public class Inventory : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class Inventory : MonoBehaviour
     {
         if (items.Count >= maxItems)
         {
-            FeedbackUI.Instance.Show("Inventario lleno");
+            //empezamos a usar valores de la tabla csv
+            FeedbackUI.Instance.Show(LocalizationSettings.StringDatabase.GetLocalizedString("FEEDBACK.FULL_INVENTORY"));
 
             return false;
         }
