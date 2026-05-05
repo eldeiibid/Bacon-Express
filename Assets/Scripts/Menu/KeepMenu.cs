@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// MUY IMPORTANTE ESTE SCRIPT para no perder en inventario entre una escena y otra. Crï¿½ditos a mi chimichurri Yi.
-public class KeepInventory : MonoBehaviour
+// MUY IMPORTANTE ESTE SCRIPT para no perder en inventario entre una escena y otra. Créditos a mi chimichurri Yi.
+public class KeepMenu : MonoBehaviour
 {
-    public static KeepInventory instance;
+    public static KeepMenu instance;
 
     void Awake()
     {

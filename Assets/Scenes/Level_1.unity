@@ -1789,6 +1789,7 @@ GameObject:
   - component: {fileID: 217233476}
   - component: {fileID: 217233475}
   - component: {fileID: 217233474}
+  - component: {fileID: 217233479}
   m_Layer: 5
   m_Name: "MEN\xDA CONFIGURACI\xD3N"
   m_TagString: Untagged
@@ -1873,7 +1874,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!224 &217233478
 RectTransform:
@@ -1896,6 +1897,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &217233479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217233473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac098dfe52c92a440833c3dd7b11741d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &228186422
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,6 +3634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  itemIDs: []
   maxItems: 4
 --- !u!1 &508920303
 GameObject:
@@ -7700,11 +7714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0dc5dadb9b27f440901f83b51e3ef00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miItem1: {fileID: 11400000, guid: 6f5639d8342b9564ea33b4f787095acf, type: 2}
-  miItem2: {fileID: 11400000, guid: a8ce7beb1edf54e4c9da44ef8c315da6, type: 2}
-  miItem3: {fileID: 11400000, guid: 30d6bb5aeb26ad648817d12850170f4c, type: 2}
-  miItem4: {fileID: 11400000, guid: f17a6798eb512bf43a0302b15af23e16, type: 2}
-  miItem5: {fileID: 0}
 --- !u!4 &1038127414
 Transform:
   m_ObjectHideFlags: 0
@@ -10346,7 +10355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2a8f558eb7ba745aa035f3f1116c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiValue: 1
+  aiValue: 10
   healthSystem: {fileID: 1706930586}
   trackAnim: {fileID: 796697525}
   distanceControl: {fileID: 1593488717}
@@ -11299,7 +11308,7 @@ MonoBehaviour:
   sistemaMonedas: {fileID: 270653448}
   InventoryUI: {fileID: 1677375039}
   escena: 2
-  INITIAL_DISTANCE: 200
+  INITIAL_DISTANCE: 10
 --- !u!1001 &1596926617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11552,7 +11561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7e43bb81a5e6042a0e826f0d839572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiValue: 0
+  aiValue: 1
   healthSystem: {fileID: 1706930586}
   doorController: {fileID: 1130222115}
   distanceControl: {fileID: 1593488717}
@@ -14225,7 +14234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdb03a0956e8374e96ccbc5776bf6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiValue: 0
+  aiValue: 10
   healthSystem: {fileID: 1706930586}
   trackAnim: {fileID: 796697525}
   distanceControl: {fileID: 1593488717}
@@ -15640,12 +15649,12 @@ SceneRoots:
   - {fileID: 2095927019}
   - {fileID: 1976365426}
   - {fileID: 1440573149}
+  - {fileID: 217233478}
   - {fileID: 443405522}
   - {fileID: 2006139210}
   - {fileID: 1916485272}
   - {fileID: 1231302640}
   - {fileID: 435593388}
-  - {fileID: 217233478}
   - {fileID: 1038127414}
   - {fileID: 270653449}
   - {fileID: 1706930585}
