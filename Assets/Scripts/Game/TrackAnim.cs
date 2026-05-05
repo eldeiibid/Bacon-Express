@@ -21,7 +21,7 @@ public class TrackAnim : MonoBehaviour
     void Update()
     {
         //La textura se va desplazando en Y en función de la velocidad y deltaTime.
-        Yoffset = (Yoffset + (speed * Time.deltaTime)) % 10;
+        Yoffset = (Yoffset + (speed * Time.deltaTime*2)) % 10;
         trackMat.SetTextureOffset("_MainTex", new Vector2(Yoffset, 0));
     }
 

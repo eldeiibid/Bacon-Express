@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MultiplyAI : MonoBehaviour
+public class IberiaAI : MonoBehaviour
 {
-    public enum EnemyState { Disabled, Idle, OnDoor }
+    public enum EnemyState { Disabled, Idle, OnWindow }
 
     [Header("AI Settings")]
     [Range(0, 10)]
@@ -11,16 +11,16 @@ public class MultiplyAI : MonoBehaviour
 
     [Header("External References")]
     [SerializeField] private HealthSystem healthSystem;
-    [SerializeField] private DoorController doorController;
+    [SerializeField] private TrackAnim trackAnim;
     [SerializeField] private DistanceControl distanceControl;
     [SerializeField] private JumpscareController jumpscareController;
-    [SerializeField] Image multiplyImage;
+    [SerializeField] Image iberiaImage;
 
     private EnemyState currentState;
     [Header("Debug")]
     public float timer;
     private int lastDistanceThreshold = 0;
-    private const int DISTANCE_REQUIRED_TO_INCREASE_AI = 100; //Valor recomendado: 100m
+    private const int DISTANCE_REQUIRED_TO_INCREASE_AI = 200; //Valor recomendado: 100m
     
 
     private void Start()
@@ -48,8 +48,8 @@ public class MultiplyAI : MonoBehaviour
                 UpdateIdle();
                 break;
 
-            case EnemyState.OnDoor:
-                UpdateOnDoor();
+            case EnemyState.OnWindow:
+                UpdateOnWindow();
                 break;
         }
     }
@@ -59,29 +59,28 @@ public class MultiplyAI : MonoBehaviour
     {
         if (timer <= 0f)
         {
-            ChangeState(EnemyState.OnDoor);
+            ChangeState(EnemyState.OnWindow);
         }
     }
 
+    //Si se le hace click a la imagen, vuelve al estado idle.
+    public void MouseClick()
+    {
+        Debug.Log("Iberia clicado");
+        ChangeState(EnemyState.Idle);
+    }
 
-    private void UpdateOnDoor()
+
+    private void UpdateOnWindow()
     {
         if (timer <= 0f)
         {
             healthSystem.decreaseHealth();
-            Debug.Log("[Multiply] ¡El enemigo daña al jugador!");
+            Debug.Log("[Iberia] ¡El enemigo daña al jugador!");
             jumpscareController.TriggerJumpscare();
             ChangeState(EnemyState.Idle);
         }
-
-        if (doorController.isClosed)
-        {
-            Debug.Log("[Multiply] Puerta cerrada — el enemigo retrocede.");
-            ChangeState(EnemyState.Idle);
-            return;
-        }
     }
-
 
     private void CheckDistanceMilestone()
     {
@@ -93,7 +92,7 @@ public class MultiplyAI : MonoBehaviour
             lastDistanceThreshold = currentThreshold;
 
             aiValue = Mathf.Min(aiValue + 1, 10);
-            Debug.Log($"[Multiply] ¡Nuevo umbral de distancia! ({currentDistance}m) — aiValue sube a: {aiValue}");
+            Debug.Log($"[IberiaAI] ¡Nuevo umbral de distancia! ({currentDistance}m) — aiValue sube a: {aiValue}");
             
         }
     }
@@ -103,28 +102,28 @@ public class MultiplyAI : MonoBehaviour
     {
         currentState = newState;
 
-        if (newState == EnemyState.OnDoor)
+        if (newState == EnemyState.OnWindow)
         {
-            multiplyImage.enabled = true;
+            iberiaImage.enabled = true;
         }
         else
         {
-            multiplyImage.enabled = false;
+            iberiaImage.enabled = false;
         }
 
         ResetTimer(newState);
-        Debug.Log($"[MultiplyAI] Nuevo estado: {newState}  |  Próximo timer: {timer:F2}s");
+        Debug.Log($"[IberiaAI] Nuevo estado: {newState}  |  Próximo timer: {timer:F2}s");
     }
 
     private void ResetTimer(EnemyState state)
     {
-        if (state == EnemyState.OnDoor)
+        if (state == EnemyState.OnWindow)
         {
             timer = 3f;
         }
         else if (state == EnemyState.Idle)
         {
-            float random = Random.Range(40f, 120f); //Rango recomendado; entre 40s y 120s.
+            float random = Random.Range(40f, 90f); //Rango recomendado; entre 40s y 90s.
             timer = random - aiValue*2;
         }
         else
@@ -133,4 +132,5 @@ public class MultiplyAI : MonoBehaviour
             timer = 0f;
         }
     }
+
 }

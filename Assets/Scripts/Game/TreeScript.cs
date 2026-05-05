@@ -20,7 +20,7 @@ public class TreeScript : MonoBehaviour
         speed = trackAnim.GetSpeed();
 
         //Actualizar posición en función de la velocidad.
-        transform.position -= new Vector3(0, 0, speed*10 * Time.deltaTime);
+        transform.position -= new Vector3(0, 0, speed*20 * Time.deltaTime);
     }
 
 // Cuando entra en el Trigger vuelve a su posición inicial.

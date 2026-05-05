@@ -1,9 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MultiplyAI : MonoBehaviour
+public class PainlessAI : MonoBehaviour
 {
-    public enum EnemyState { Disabled, Idle, OnDoor }
+    public enum EnemyState { Disabled, Idle, OnRails }
 
     [Header("AI Settings")]
     [Range(0, 10)]
@@ -11,17 +12,15 @@ public class MultiplyAI : MonoBehaviour
 
     [Header("External References")]
     [SerializeField] private HealthSystem healthSystem;
-    [SerializeField] private DoorController doorController;
     [SerializeField] private DistanceControl distanceControl;
     [SerializeField] private JumpscareController jumpscareController;
-    [SerializeField] Image multiplyImage;
+    [SerializeField] PainlessBillboard painlessBillboard;
 
     private EnemyState currentState;
     [Header("Debug")]
     public float timer;
     private int lastDistanceThreshold = 0;
     private const int DISTANCE_REQUIRED_TO_INCREASE_AI = 100; //Valor recomendado: 100m
-    
 
     private void Start()
     {
@@ -37,7 +36,8 @@ public class MultiplyAI : MonoBehaviour
 
     private void Update()
     {
-        if (currentState == EnemyState.Disabled) return;
+        //si esta en los raíles o desactivado; dejar de actualizar el timer.
+        if (currentState == EnemyState.Disabled || currentState == EnemyState.OnRails) return;
 
         CheckDistanceMilestone();
         timer -= Time.deltaTime;
@@ -48,8 +48,8 @@ public class MultiplyAI : MonoBehaviour
                 UpdateIdle();
                 break;
 
-            case EnemyState.OnDoor:
-                UpdateOnDoor();
+            case EnemyState.OnRails:
+                UpdateOnRails();
                 break;
         }
     }
@@ -59,77 +59,72 @@ public class MultiplyAI : MonoBehaviour
     {
         if (timer <= 0f)
         {
-            ChangeState(EnemyState.OnDoor);
+            ChangeState(EnemyState.OnRails);
+            painlessBillboard.hasAttacked = false;
+            Debug.Log($"[BreakAI] El enemigo se ha ido a las vías!!");
         }
     }
 
 
-    private void UpdateOnDoor()
+    private void UpdateOnRails()
     {
-        if (timer <= 0f)
-        {
-            healthSystem.decreaseHealth();
-            Debug.Log("[Multiply] ¡El enemigo daña al jugador!");
-            jumpscareController.TriggerJumpscare();
-            ChangeState(EnemyState.Idle);
-        }
-
-        if (doorController.isClosed)
-        {
-            Debug.Log("[Multiply] Puerta cerrada — el enemigo retrocede.");
-            ChangeState(EnemyState.Idle);
-            return;
-        }
+        //Debes hacer refrencia al billboard y esperar su llamada.
+        return;
     }
-
 
     private void CheckDistanceMilestone()
     {
         int currentDistance = distanceControl.getDistanceDone();
         int currentThreshold = currentDistance / DISTANCE_REQUIRED_TO_INCREASE_AI;
 
+        //Al llegar a cierta distancia, sube 1 el nivel de IA.
         if (currentThreshold > lastDistanceThreshold)
         {
             lastDistanceThreshold = currentThreshold;
 
             aiValue = Mathf.Min(aiValue + 1, 10);
-            Debug.Log($"[Multiply] ¡Nuevo umbral de distancia! ({currentDistance}m) — aiValue sube a: {aiValue}");
+            Debug.Log($"[Painless] ¡Nuevo umbral de distancia! ({currentDistance}m) — aiValue sube a: {aiValue}");
             
         }
     }
 
   
-    private void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         currentState = newState;
 
-        if (newState == EnemyState.OnDoor)
+        if (newState == EnemyState.OnRails)
         {
-            multiplyImage.enabled = true;
+            painlessBillboard.enabled = true;
         }
         else
         {
-            multiplyImage.enabled = false;
+            painlessBillboard.enabled = false;
         }
 
         ResetTimer(newState);
-        Debug.Log($"[MultiplyAI] Nuevo estado: {newState}  |  Próximo timer: {timer:F2}s");
+        Debug.Log($"[PainlessAI] Nuevo estado: {newState}  |  Próximo timer: {timer:F2}s");
+    }
+
+    public void Jumpscare()
+    {
+        //restar vida al enemigo e iniciar jumpscare.
+        healthSystem.decreaseHealth();
+        Debug.Log("[Painless] ¡El enemigo daña al jugador!");
+        jumpscareController.TriggerJumpscare();
+ 
     }
 
     private void ResetTimer(EnemyState state)
     {
-        if (state == EnemyState.OnDoor)
+        if (state == EnemyState.Idle)
         {
-            timer = 3f;
-        }
-        else if (state == EnemyState.Idle)
-        {
-            float random = Random.Range(40f, 120f); //Rango recomendado; entre 40s y 120s.
+            float random = Random.Range(40f, 120f); //Rango recomendado; entre 40 y 120s.
             timer = random - aiValue*2;
         }
         else
         {
-            // Si esta Disabled, el timer no importa, se deja en 0
+            // Si esta Disabled o en los raíles, el timer no importa, se deja en 0
             timer = 0f;
         }
     }

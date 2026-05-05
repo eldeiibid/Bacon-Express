@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class BreakBillboard : MonoBehaviour
+public class PainlessBillboard : MonoBehaviour
 {
     private float speed = 0;
 
@@ -14,7 +12,7 @@ public class BreakBillboard : MonoBehaviour
     [Header("Referencias Externas")]
     [SerializeField] TrackAnim trackAnim;
     [SerializeField] Lights lights;
-    [SerializeField] BreakAI breakAI;
+    [SerializeField] PainlessAI painlessAI;
 
     public void SetSpeed(float speed2set)
     {
@@ -35,12 +33,12 @@ public class BreakBillboard : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Break"))
         {
-            //comprueba si la luz de la cabina esta encendida.
-            if (lights.lightsOn)
+            //comprueba si la luz de la cabina esta apagada.
+            if (!lights.lightsOn)
             {
-                Debug.Log($"[BreakBillboard] Las luces estaban encendidas, cambiar a estado IDLE");
-                breakAI.ChangeState(BreakAI.EnemyState.Idle);
-                transform.position += new Vector3(0, 0, 100);        
+                Debug.Log($"[BreakBillboard] Las luces estaban apagadas, cambiar a estado IDLE");
+                painlessAI.ChangeState(PainlessAI.EnemyState.Idle);
+                transform.position += new Vector3(0, 0, 150);        
 
             }
             else
@@ -48,10 +46,10 @@ public class BreakBillboard : MonoBehaviour
                 if (!hasAttacked)
                 {
                     hasAttacked = true;
-                    Debug.Log($"[BreakBillboard] Las luces estaban apagadas, llamando a funcion de JUMPSCARE.");
-                    breakAI.ChangeState(BreakAI.EnemyState.Idle);
-                    breakAI.Jumpscare();
-                    transform.position += new Vector3(0, 0, 100);
+                    Debug.Log($"[BreakBillboard] Las luces estaban encendidas, llamando a funcion de JUMPSCARE.");
+                    painlessAI.ChangeState(PainlessAI.EnemyState.Idle);
+                    painlessAI.Jumpscare();
+                    transform.position += new Vector3(0, 0, 150);
                 
                 }
 
