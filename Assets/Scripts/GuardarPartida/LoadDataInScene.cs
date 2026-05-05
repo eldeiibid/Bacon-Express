@@ -15,7 +15,7 @@ public class LoadDataInScene : MonoBehaviour
             
             sistemaVida.health = data.health;
             sistemaMonedas.coins = data.coins;
-            menuConfig.diffOn = data.difficulty;
+            //menuConfig.diffOn = data.difficulty;
 
             
             Inventory inv = Inventory.Instance;

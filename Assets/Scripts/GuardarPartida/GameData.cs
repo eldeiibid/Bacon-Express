@@ -14,7 +14,7 @@ public class GameData
     {
         health = sistemaVida.health;
         coins = sistemaMonedas.coins;
-        difficulty = menuConfig.diffOn;
+        //difficulty = menuConfig.diffOn;
         sceneName = escena.name;
 
         inventory = new InventoryData();
