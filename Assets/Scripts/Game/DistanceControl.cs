@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 //Controla la distancia necesaria para llegar al siguiente nivel. Además dispone en pantalla la restante para llegar al cambio de pantalla.
 public class DistanceControl : MonoBehaviour
 {
+    [Header("Assets Requeridos")]
     [SerializeField] TrackAnim trackAnim;
     [SerializeField] TextMeshProUGUI distanceLeftDisplay;
+    [SerializeField] SistemaMonedas sistemaMonedas;
     public GameObject InventoryUI;
+    [Header("Variables")]
+    //escena a la que cambiar al terminar de recorrer la distancia.
     public int escena;
-
     //LA DISTANCIA A RECORRER PARA PASAR A LA SIGUIENTE ESCENA EN METROS.
-    public int INITIAL_DISTANCE = 50; //Valor recomendado: 1000m
+    public int INITIAL_DISTANCE = 500; //Valor recomendado: 1000m, tambien depende del nivel.
     float distance_done;
 
     void Start()
@@ -40,9 +40,12 @@ public class DistanceControl : MonoBehaviour
 
     void CheckDistanceLeft(int value)
     {   
-        //Cambiar por el valor de la escena de la estación
+        
         if (value <= 0)
         {
+            //Añade mondedas al terminar el nivel, la paga depende de la distancia recorrida.
+            sistemaMonedas.AddCoins(INITIAL_DISTANCE / 10);
+            //Cambiar por el valor de la escena de la estación
             SceneManager.LoadScene(escena);
             //InventoryUI.SetActive(false);
         }

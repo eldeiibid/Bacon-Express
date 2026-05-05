@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 //Controla el sistema de salud del juego
@@ -19,6 +17,7 @@ public class HealthSystem : MonoBehaviour
     [Header("Health")]
     [Range(0, 3)]
     public int health = 3;
+    private float time = 0.5f;
 
     void Update()
     {
@@ -62,6 +61,19 @@ public class HealthSystem : MonoBehaviour
             glass.SetActive(false);
             shattered_glass.SetActive(false);
             very_shattered_glass.SetActive(false);
+
+            GameOver();
+        }
+
+    }
+
+    private void GameOver()
+    {
+        time -= Time.deltaTime;
+
+        if (time <= 0)
+        {
+            SceneManager.LoadScene("EndScene");
         }
 
     }

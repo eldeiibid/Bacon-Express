@@ -77,3 +77,6 @@ ITEM.SILVER_BULLETS.NAME,74,Silver Bullets,Balas Plateadas
 FEEDBACK.CANT_USE,75,Can't be used,No se puede usar
 FEEDBACK.CANT_COMBINE,76,Can't be combined,No se puede combinar
 FEEDBACK.FULL_INVENTORY,77,Inventory is full,Inventario lleno
+GAME_OVER.LABEL,78,GAME OVER,FIN DE LA PARTIDA
+GAME_OVER.RETRY,79,Retry,Reintentar
+GAME_OVER.MAIN_MENU,80,Main Menu,Menú Principal

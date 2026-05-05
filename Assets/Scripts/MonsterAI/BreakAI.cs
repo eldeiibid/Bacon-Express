@@ -119,7 +119,7 @@ public class BreakAI : MonoBehaviour
         if (state == EnemyState.Idle)
         {
             float random = Random.Range(40f, 120f); //Rango recomendado; entre 40 y 120s.
-            timer = random - aiValue*2;
+            timer = random - aiValue*3;
         }
         else
         {

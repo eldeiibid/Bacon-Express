@@ -123,8 +123,8 @@ public class IberiaAI : MonoBehaviour
         }
         else if (state == EnemyState.Idle)
         {
-            float random = Random.Range(40f, 90f); //Rango recomendado; entre 40s y 90s.
-            timer = random - aiValue*2;
+            float random = Random.Range(40f, 60f); //Rango recomendado; entre 40s y 90s.
+            timer = random - aiValue*3;
         }
         else
         {

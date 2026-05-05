@@ -14,15 +14,15 @@ public class TrackAnim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trackMat.SetTextureOffset("_MainTex", new Vector2(0, 0));
+        trackMat.SetTextureOffset("_MainTex", new Vector2(-0.5f, 0));
     }
 
     // Update is called once per frame
     void Update()
     {
         //La textura se va desplazando en Y en función de la velocidad y deltaTime.
-        Yoffset = (Yoffset + (speed * Time.deltaTime*2)) % 10;
-        trackMat.SetTextureOffset("_MainTex", new Vector2(Yoffset, 0));
+        Yoffset = (Yoffset - (speed * Time.deltaTime)) % 10;
+        trackMat.SetTextureOffset("_MainTex", new Vector2(-0.5f, Yoffset));
     }
 
     public float GetSpeed()

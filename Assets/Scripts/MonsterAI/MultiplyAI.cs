@@ -120,12 +120,12 @@ public class MultiplyAI : MonoBehaviour
     {
         if (state == EnemyState.OnDoor)
         {
-            timer = 3f;
+            timer = 5f;
         }
         else if (state == EnemyState.Idle)
         {
-            float random = Random.Range(40f, 120f); //Rango recomendado; entre 40s y 120s.
-            timer = random - aiValue*2;
+            float random = Random.Range(40f, 90f); //Rango recomendado; entre 40s y 120s.
+            timer = random - aiValue*3;
         }
         else
         {
