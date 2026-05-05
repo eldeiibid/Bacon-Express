@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 44606762}
   - component: {fileID: 44606764}
   - component: {fileID: 44606763}
+  - component: {fileID: 44606765}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -341,6 +342,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44606761}
   m_CullTransparentMesh: 1
+--- !u!114 &44606765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44606761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+    m_TableEntryReference:
+      m_KeyId: 68
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 44606763}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &63301654
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +752,7 @@ GameObject:
   - component: {fileID: 426802096}
   - component: {fileID: 426802098}
   - component: {fileID: 426802097}
+  - component: {fileID: 426802099}
   m_Layer: 5
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
@@ -758,14 +800,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "GLOSARIO DE BESTIAS DEL RECORRIDO:\n\nMultiply -  vigila tu espalda, este
-    conejo monstruoso puede aparecer por la puerta trasera. Ci\xE9rrala cuando le
-    veas.\n\nLongstepper - si este ciervo tiene los ojso rojos, apaga la luz de la
-    cabina. Si los tiene blancos, toca la ventana.\n\nBreak - cuando el jabal\xED
-    mutante aparezca en las v\xEDas, apaga y enciende las luces repetidas veces.\n\nIberia
-    - ignora a esta lechuza si tiene los ojos rojos. Si los tiene blancos, no lo
-    pierdas de vista hasta que se vaya.\n\nPainless - si el toro aparece en las v\xEDas,
-    reduce la valocidad o para el tren cuanto antes.\n"
+  m_text: "GLOSARIO DE BESTIAS DEL RECORRIDO:\n\nMULTIPLY -  Vigila tus espaldas,
+    este conejo monstruoso puede aparecer por la puerta trasera. Ci\xE9rrala cuando
+    le veas.\n\nLONGSTEPPER - Si este ciervo aprece en tu ventana izquierda, frena
+    el tren inmediatamente y espera a que se vaya.\n\nBREAK - Cuando el jabal\xED
+    mutante aparezca en las v\xEDas, enciende las luces.\n\nIBERIA -Esta lechuza
+    aparecer\xE1 en tu ventana derecha. Haz click sobre ella para que se vaya.\n\nPAINLESS
+    - Si el toro aparece en las v\xEDas, apaga las luces cuanto antes.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -842,6 +883,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426802095}
   m_CullTransparentMesh: 1
+--- !u!114 &426802099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426802095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+    m_TableEntryReference:
+      m_KeyId: 69
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 426802097}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &454907734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,11 +1300,11 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!224 &739370741
 RectTransform:
@@ -1599,6 +1680,7 @@ GameObject:
   - component: {fileID: 1045965401}
   - component: {fileID: 1045965403}
   - component: {fileID: 1045965402}
+  - component: {fileID: 1045965404}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1722,6 +1804,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045965400}
   m_CullTransparentMesh: 1
+--- !u!114 &1045965404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045965400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+    m_TableEntryReference:
+      m_KeyId: 71
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1045965402}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1158669751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,6 +1932,7 @@ GameObject:
   - component: {fileID: 1334223992}
   - component: {fileID: 1334223994}
   - component: {fileID: 1334223993}
+  - component: {fileID: 1334223995}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1938,6 +2061,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334223991}
   m_CullTransparentMesh: 1
+--- !u!114 &1334223995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334223991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:13f0940b86188414c905841ee315d4bc
+    m_TableEntryReference:
+      m_KeyId: 67
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1334223993}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1395192773
 GameObject:
   m_ObjectHideFlags: 0

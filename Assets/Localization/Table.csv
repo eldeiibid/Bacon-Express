@@ -50,7 +50,7 @@ DIAL.NPC.BUY_SHINY_METAL,47,"It's a piece of metal I found lying around, isn't i
 DIAL.NPC.BUY_ENGINEER_HAMMER,48,,
 DIAL.NPC.BUY_SILVER_HAMMER,49,,
 DIAL.NPC.BUY_WINDOW_REPAIR,50,,
-DIAL.CHOOSE.NOT_INTERESTED,51,I'm not interested,
+DIAL.CHOOSE.NOT_INTERESTED,51,I'm not interested,No me interesa nada
 DIAL.CHOOSE.BUY_ITEM,52,I'll keep it,Me lo quedo
 DIAL.CHOOSE.NOT_BUY_ITEM,53,What else you got?,¿Qué más tienes?
 DIAL.CHOOSE.BULLETS,54,Bullets,Balas
@@ -66,11 +66,59 @@ INV.USE,63,Use,Usar
 INV.INSPECT,64,Inspect,Inspeccionar
 INV.COMBINE,65,Combine,Combinar
 INV.TOSS,66,Toss,Tirar
-TUTORIAL.TEXT_1,67,,
-TUTORIAL.TEXT_2,68,,
-TUTORIAL.TEXT_3,69,,
+TUTORIAL.TEXT_1,67,"Control instructions for the train driver:
+
+First of all, the transport company would like to thank you for taking on this job in these challenging times. Now more than ever, your work and your courage are essential.
+
+As you know, the exterior of the train is extremely dangerous: numerous hazards roam freely near the tracks. We regret to inform you that the interior of the cab is not entirely safe.","Instrucciones de control para el señor maquinista del tren:
+
+Antes que nada, la compañía de transporte quiere agradecerle asumir este puesto de trabajo en los tiempos que corren. Ahora más que nunca, su labor y su valentía son necesarias.
+
+Como bien sabe, los exteriores resultan altemante peligrosos: múltiples aberraciones campan a sus anchas cerca de las vías. Lamentamos comunicarle que el interior de la cabina no es totalmente seguro."
+TUTORIAL.TEXT_2,68,"INSTRUCTIONS:
+
+You can move around the cab using the arrows on the sides.
+
+Accelerate or decelerate using the lever on the right side of the control panel.
+
+Turn the headlights on or off using the center button on the control panel.
+
+Close the rear cab door using the lever on your left.
+
+Press the switch to turn off the cab lights.","INSTRUCIONES:
+
+Puede moverse por la cabina con las flechas posicionadas en los laterales.
+
+Acelere o reduzca la velocidad con la palanca situada a la derecha en la mesa de control.
+
+Encienda o apague las los faros con el botón central de la mesa de control.
+
+Cierre la puerta trasera de la cabina con la palanca situada a su izquierda.
+
+Pulse el interruptor para apagar las luces de dentro de la cabina."
+TUTORIAL.TEXT_3,69,"GLOSSARY OF TRAIN BEASTS:
+
+MULTIPLY - Watch your back, this monstrous rabbit might appear at the back door. Close it when you see it.
+
+LONGSTEPPER - If this deer appears at your left window, stop the train immediately and wait for it to leave.
+
+BREAK - When the mutant boar appears on the tracks, turn on the lights.
+
+IBERIA - This owl will appear at your right window. Click on it to make it leave.
+
+PAINLESS - If the bull appears on the tracks, turn off the lights as soon as possible.","GLOSARIO DE BESTIAS DEL RECORRIDO:
+
+MULTIPLY -  Vigila tus espaldas, este conejo monstruoso puede aparecer por la puerta trasera. Ciérrala cuando le veas.
+
+LONGSTEPPER - Si este ciervo aprece en tu ventana izquierda, frena el tren inmediatamente y espera a que se vaya.
+
+BREAK - Cuando el jabalí mutante aparezca en las vías, enciende las luces.
+
+IBERIA -Esta lechuza aparecerá en tu ventana derecha. Haz click sobre ella para que se vaya.
+
+PAINLESS - Si el toro aparece en las vías, apaga las luces cuanto antes."
 TUTORIAL.TEXT_4,70,,
-TUTORIAL.TEXT_5,71,,
+TUTORIAL.OK,71,OK,Entendido
 CREDITS.LABEL,72,,
 ITEM.SILVER_BULLETS.DESC,73,"A small pile of silver bullets. When used, any monsters on the tracks will disappear immediately and won't approach for at least fifteen seconds.","Un montoncito de balas de plata. Al usarlas, los monstruos que se encuentren en las vías desaparecerán inmediatamente y no se acercarán durante, al menos, quince segundos."
 ITEM.SILVER_BULLETS.NAME,74,Silver Bullets,Balas Plateadas

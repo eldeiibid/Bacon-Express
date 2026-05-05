@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599138bdaa611c04eb2362ee6932d472, type: 3}
   m_Name: Duct Tape
   m_EditorClassIdentifier: 
+  id: 
   itemName: DUCT_TAPE
-  icon: {fileID: 21300000, guid: 439b3cd51515ae44aaf639e72af8c379, type: 3}
-  canUse: 1
-  canCombine: 0
+  icon: {fileID: 21300000, guid: 02c57ada0ce6abd46aabadd367ebd0d0, type: 3}
+  canUse: 0
+  canCombine: 1
   cost: 3
   description: "EL NOMBRE DE LOS ITEMS TIENEN Q ESTAR EN MAYUS. Y SEPARADOS POR \"_\"
     PARA Q FUNCIONE LA LOCALIZACI\xD3N"
-  combinations: []
+  combinations:
+  - otherItem: {fileID: 11400000, guid: a8ce7beb1edf54e4c9da44ef8c315da6, type: 2}
+    result: {fileID: 11400000, guid: 8d23cb2651ac8c046a377aec53ad6744, type: 2}
+  - otherItem: {fileID: 11400000, guid: 6f5639d8342b9564ea33b4f787095acf, type: 2}
+    result: {fileID: 11400000, guid: 6445acd2407162a498c55bb73ff354dc, type: 2}

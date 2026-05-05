@@ -267,6 +267,73 @@ MonoBehaviour:
     m_Localized: Main Menu
     m_Metadata:
       m_Items: []
+  - m_Id: 67
+    m_Localized: 'Control instructions for the train driver:
+
+
+      First of all,
+      the transport company would like to thank you for taking on this job in these
+      challenging times. Now more than ever, your work and your courage are essential.
+
+
+      As
+      you know, the exterior of the train is extremely dangerous: numerous hazards
+      roam freely near the tracks. We regret to inform you that the interior of the
+      cab is not entirely safe.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Localized: 'INSTRUCTIONS:
+
+
+      You can move around the cab using the arrows
+      on the sides.
+
+
+      Accelerate or decelerate using the lever on the right
+      side of the control panel.
+
+
+      Turn the headlights on or off using the
+      center button on the control panel.
+
+
+      Close the rear cab door using the
+      lever on your left.
+
+
+      Press the switch to turn off the cab lights.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Localized: 'GLOSSARY OF TRAIN BEASTS:
+
+
+      MULTIPLY - Watch your back, this
+      monstrous rabbit might appear at the back door. Close it when you see it.
+
+
+      LONGSTEPPER
+      - If this deer appears at your left window, stop the train immediately and
+      wait for it to leave.
+
+
+      BREAK - When the mutant boar appears on the tracks,
+      turn on the lights.
+
+
+      IBERIA - This owl will appear at your right window.
+      Click on it to make it leave.
+
+
+      PAINLESS - If the bull appears on the
+      tracks, turn off the lights as soon as possible.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Localized: OK
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -274,6 +274,38 @@ MonoBehaviour:
     m_Localized: "Men\xFA Principal"
     m_Metadata:
       m_Items: []
+  - m_Id: 67
+    m_Localized: "Instrucciones de control para el se\xF1or maquinista del tren:\n\nAntes
+      que nada, la compa\xF1\xEDa de transporte quiere agradecerle asumir este puesto
+      de trabajo en los tiempos que corren. Ahora m\xE1s que nunca, su labor y su
+      valent\xEDa son necesarias.\n\nComo bien sabe, los exteriores resultan altemante
+      peligrosos: m\xFAltiples aberraciones campan a sus anchas cerca de las v\xEDas.
+      Lamentamos comunicarle que el interior de la cabina no es totalmente seguro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Localized: "INSTRUCIONES:\n\nPuede moverse por la cabina con las flechas posicionadas
+      en los laterales.\n\nAcelere o reduzca la velocidad con la palanca situada
+      a la derecha en la mesa de control.\n\nEncienda o apague las los faros con
+      el bot\xF3n central de la mesa de control.\n\nCierre la puerta trasera de la
+      cabina con la palanca situada a su izquierda.\n\nPulse el interruptor para
+      apagar las luces de dentro de la cabina."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Localized: "GLOSARIO DE BESTIAS DEL RECORRIDO:\n\nMULTIPLY -  Vigila tus espaldas,
+      este conejo monstruoso puede aparecer por la puerta trasera. Ci\xE9rrala cuando
+      le veas.\n\nLONGSTEPPER - Si este ciervo aprece en tu ventana izquierda, frena
+      el tren inmediatamente y espera a que se vaya.\n\nBREAK - Cuando el jabal\xED
+      mutante aparezca en las v\xEDas, enciende las luces.\n\nIBERIA -Esta lechuza
+      aparecer\xE1 en tu ventana derecha. Haz click sobre ella para que se vaya.\n\nPAINLESS
+      - Si el toro aparece en las v\xEDas, apaga las luces cuanto antes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Localized: Entendido
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

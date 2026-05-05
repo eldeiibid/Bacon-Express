@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599138bdaa611c04eb2362ee6932d472, type: 3}
   m_Name: Window Repair
   m_EditorClassIdentifier: 
-  itemName: Reparador de ventanas
+  id: 
+  itemName: WINDOW_REPAIR
   icon: {fileID: 21300000, guid: 8d276ed18d8800e41a88a4c73d8c220c, type: 3}
-  canUse: 1
+  canUse: 0
   canCombine: 0
   cost: 0
-  description: "Un kit de reparaci\xF3n de ventanas. \xDAsalo en una para repararla
-    al m\xE1ximo."
+  description: "EL NOMBRE DE LOS ITEMS TIENEN Q ESTAR EN MAYUS. Y SEPARADOS POR \"_\"
+    PARA Q FUNCIONE LA LOCALIZACI\xD3N"
   combinations: []

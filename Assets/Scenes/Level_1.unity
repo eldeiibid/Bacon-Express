@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.3019608, g: 0.30588236, b: 0.46274513, a: 1}
+  m_FogColor: {r: 0.41960788, g: 0.5372549, b: 0.6039216, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -2030,7 +2030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 1374079599}
-  coins: 0
+  coins: 100
 --- !u!4 &270653449
 Transform:
   m_ObjectHideFlags: 0
@@ -4498,7 +4498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a0bfd9873179e4bb3d62f46b4d16af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiValue: 1
+  aiValue: 2
   healthSystem: {fileID: 1706930586}
   distanceControl: {fileID: 1593488717}
   jumpscareController: {fileID: 2006139206}
@@ -10355,7 +10355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2a8f558eb7ba745aa035f3f1116c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiValue: 10
+  aiValue: 2
   healthSystem: {fileID: 1706930586}
   trackAnim: {fileID: 796697525}
   distanceControl: {fileID: 1593488717}
@@ -10883,7 +10883,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d282120fff4332a4baf83c9163981a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07662f98cc7bfb048af0c3048d0d4b79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11308,7 +11308,7 @@ MonoBehaviour:
   sistemaMonedas: {fileID: 270653448}
   InventoryUI: {fileID: 1677375039}
   escena: 2
-  INITIAL_DISTANCE: 10
+  INITIAL_DISTANCE: 200
 --- !u!1001 &1596926617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11561,7 +11561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7e43bb81a5e6042a0e826f0d839572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiValue: 1
+  aiValue: 0
   healthSystem: {fileID: 1706930586}
   doorController: {fileID: 1130222115}
   distanceControl: {fileID: 1593488717}
@@ -12507,7 +12507,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d282120fff4332a4baf83c9163981a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07662f98cc7bfb048af0c3048d0d4b79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14234,7 +14234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdb03a0956e8374e96ccbc5776bf6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiValue: 10
+  aiValue: 0
   healthSystem: {fileID: 1706930586}
   trackAnim: {fileID: 796697525}
   distanceControl: {fileID: 1593488717}
@@ -14314,7 +14314,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d282120fff4332a4baf83c9163981a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07662f98cc7bfb048af0c3048d0d4b79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14906,7 +14906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd64cda9ec3bdf04ab7c50e5d81d53d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiValue: 10
+  aiValue: 0
   healthSystem: {fileID: 1706930586}
   distanceControl: {fileID: 1593488717}
   jumpscareController: {fileID: 1916485271}
